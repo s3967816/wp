@@ -41,6 +41,7 @@ main {
     background-color: #cfccd899;
     text-align: left; 
     position: relative; 
+    height: 400px;
 }
 
 .image-container {
@@ -55,7 +56,6 @@ main {
     max-width: 200px; 
     height: 200px;
     border-radius: 100%; 
-    
 }
 
 footer {
@@ -83,5 +83,57 @@ footer {
     margin: 0;
     text-align: left; 
     padding-top: 0rem; 
-    font-weight: bold;;
+    font-weight: bold;
+}
+
+.gamespage-title {
+    font-family: "Ysabeau SC", sans-serif;
+    font-size: 16px; 
+    color: #ff0000; 
+    text-align: center; 
+    margin: 0;
+}
+
+.info {
+    font-family: "Ysabeau SC", sans-serif;
+    font-size: 10px; 
+    color: #050344; 
+    text-align: center; 
+    margin: 0;
+    padding-top: 1rem; 
+}
+
+.games-page-image {
+    max-width: 500px; 
+    height: 300px;
+    border-radius: 5%; 
+    padding-top: 10px; 
+}
+
+.table {
+    margin-top: 10px;
+    transform: translateY(-320px);
+    
+}
+
+table {
+    width: 700px;
+    border-collapse: collapse;
+    transform: translateX(450px);
+}
+
+th, td {
+    border: 1px solid #fffefe;
+    padding: 8px;
+}
+
+th {
+    background-color: #ff0000;
+    color: white;
+    text-align: left;
+}
+
+td {
+    text-align: left;
+    color: #050344;
 }
