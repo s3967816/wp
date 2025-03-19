@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0 auto; 
+    padding: 0;
+    max-width: 1200px; 
+}
+
+nav {
+    background-color: #050344;
+    color: #fff;
+    padding: 1rem;
+    overflow: hidden; 
+    border-radius: 5px;
+}
+
+.nav-logo {
+    max-width: 50px;
+    height: auto;
+    margin-right: 20px;
+    float: left; 
+}
+
+nav select {
+    margin-left: 20px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    float: left; 
+}
+
+nav input[type="text"] {
+    margin-left: 20px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    float: right; 
+}
+
+main {
+    padding: 2rem;
+    background-color: #cfccd899;
+    text-align: left; 
+    position: relative; 
+}
+
+.image-container {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    transform: translateY(80%);
+    transform: translateX(-50%);
+}
+
+.profile-image {
+    max-width: 200px; 
+    height: 200px;
+    border-radius: 100%; 
+    
+}
+
+footer {
+    background-color: #050344;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.gamesrus-title {
+    font-family: 'Ga Maamli', sans-serif;
+    font-size: 3rem; 
+    color: #ff0000; 
+    margin: 0;
+    text-align: left; 
+    padding-top: 5rem; 
+    padding-bottom: 3rem;
+}
+
+.index-heading {
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 2rem;
+    color: #050344; 
+    margin: 0;
+    text-align: left; 
+    padding-top: 0rem; 
+    font-weight: bold;;
+}
