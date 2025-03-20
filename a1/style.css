@@ -143,7 +143,6 @@ td {
 .form-container {
     background-color: #fff;
     padding: 2rem;
-    box-shadow: 10px rgb(47, 44, 44);
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
@@ -174,10 +173,6 @@ label {
     color: #050344;
     margin-bottom: 0.5rem;
     text-align: left;
-}
-
-textarea {
-    height: relative;
 }
 
 .form-buttons {
