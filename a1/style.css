@@ -109,6 +109,8 @@ footer {
     height: 300px;
     border-radius: 5%; 
     padding-top: 10px; 
+
+    transform: translateX(-80%);
 }
 
 .table {
@@ -200,4 +202,49 @@ textarea {
     border-radius: 20px;
     font-family: 'Parkinsans', sans-serif;
     font-size: 1rem;
+}
+.gallery-title {
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 13px;
+    color: #ff0000;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.gallery-description {
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 10px;
+    color: #050344;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    padding: 2rem;
+}
+
+.gallery-item {
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+    transform: translateX(30px);
+   
+}
+
+.gallery-image {
+    width: 200px;
+    height: auto;
+    padding-top: 5px;
+    transform: translateY(10px);
+}
+.gallery-caption {
+    padding: 1rem;
+    font-family: 'Parkinsans', sans-serif;
+    font-size: 10px;
+    color: #ff0000;
+    text-decoration: underline;
 }
