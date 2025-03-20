@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Game</title>
+    <meta name="author" content="Nikhil_cherukuri">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap" rel="stylesheet">
+</head>
+
+</head>
+
+<body>
+    <nav>
+        <img src="images/logo.png" alt="controller Logo" class="nav-logo">
+        <select>
+            <option>placeholder1</option>
+            <option>placeholder2</option>
+            <option>placeholder3</option>
+            <option>placeholder4</option>
+            
+        </select>
+        <input type="text" placeholder="Search">
+    </nav>
+    <main>
+        <section class="form-container">
+            <h2 class="form-title">Add a game</h2>
+            <p class="form-subtitle">You can add a new game here</p>
+            <form>
+                <label for="game-name">Game Name:</label>
+                <input type="text" id="game-name" name="game-name" placeholder="Provide a name for the game" required>
+
+                <label for="type">Type:</label>
+                <input type="text" id="type" name="type" placeholder="Provide a type for the game" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" placeholder="Describe the game briefly" required></textarea>
+
+                <label for="file">Select an Image:</label>
+                <input type="file" id="file" name="file" accept="image/*">
+                <small>Max image size: 500px</small>
+
+                <label for="image-caption">Image Caption:</label>
+                <input type="text" id="image-caption" name="image-caption" placeholder="Describe the image in one word" required>
+
+                <label for="age">Price:</label>
+                <input type="number" id="age" name="age" placeholder="Age of game in months" required>
+
+                <label for="platform">Platform:</label>
+                <input type="text" id="platform" name="platform" placeholder="Platform of the game" required>
+
+                <div class="form-buttons">
+                    <button type="submit" class="submit-button">Submit</button>
+                    <button type="reset" class="reset-button">Clear</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>&copy;Copyright s3967816. All Rights Reserved | Designed for RMIT</footer>
+</body>
+
+</html>
