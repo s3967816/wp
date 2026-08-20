@@ -178,13 +178,14 @@
         </section>
         
             <div class="modal fade" id="galleryModal" tabindex="-1"
-             aria-labelledby="galleryModalLabel" aria-hidden="true">
+     aria-labelledby="galleryModalLabel" aria-hidden="true">
 
-            <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
 
-            <div class="modal-content">
+        <div class="modal-content gallery-modal">
 
             <div class="modal-header">
+
                 <h2 class="modal-title" id="galleryModalLabel">
                     Book Cover
                 </h2>
@@ -192,7 +193,9 @@
                 <button type="button"
                         class="btn-close"
                         data-bs-dismiss="modal"
-                        aria-label="Close"></button>
+                        aria-label="Close">
+                </button>
+
             </div>
 
             <div class="modal-body text-center">
@@ -201,6 +204,24 @@
                      src=""
                      alt="Selected book cover"
                      class="modal-book-image">
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="modal-navigation"
+                        id="previousImage">
+                    <span class="material-icons">chevron_left</span>
+                    Previous
+                </button>
+
+                <button type="button"
+                        class="modal-navigation next"
+                        id="nextImage">
+                    Next
+                    <span class="material-icons">chevron_right</span>
+                </button>
 
             </div>
 
