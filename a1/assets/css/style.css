@@ -170,3 +170,74 @@ main h1 {
     color: var(--text-light);
     margin-bottom: 0;
 }
+.page-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.page-heading .material-icons {
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+.page-heading h1 {
+    margin: 0;
+    color: var(--white);
+}
+
+.filter-section {
+    background-color: var(--white);
+    padding: 1.25rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.filter-section label {
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.filter-section .form-select {
+    width: auto;
+    min-width: 120px;
+}
+
+.books-table-container {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.books-table {
+    margin-bottom: 0;
+}
+
+.books-table td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-color: var(--border);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status-badge.available {
+    background-color: var(--green);
+}
+
+.status-badge.reserved {
+    background-color: var(--secondary);
+}
+
+.status-badge.sold {
+    background-color: var(--accent-slate);
+}
