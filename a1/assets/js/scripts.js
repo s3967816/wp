@@ -23,16 +23,71 @@ if (statusFilter) {
 
 const galleryTriggers = document.querySelectorAll(".gallery-trigger");
 const modalImage = document.getElementById("modalImage");
+const modalTitle = document.getElementById("galleryModalLabel");
+const previousImage = document.getElementById("previousImage");
+const nextImage = document.getElementById("nextImage");
 
-galleryTriggers.forEach(function (image) {
+const galleryBooks = [
+    "The Midnight Library",
+    "Project Hail Mary",
+    "Dune",
+    "The Hobbit",
+    "1984",
+    "Pride and Prejudice",
+    "To Kill a Mockingbird",
+    "The Great Gatsby",
+    "Educated",
+    "The Seven Husbands",
+    "Atomic Habits",
+    "Sapiens"
+];
+
+let currentImageIndex = 0;
+
+function updateGalleryModal() {
+
+    const selectedImage = galleryTriggers[currentImageIndex];
+
+    const imagePath = selectedImage.getAttribute("data-image");
+
+    modalImage.src = imagePath;
+    modalImage.alt = galleryBooks[currentImageIndex];
+
+    modalTitle.textContent = galleryBooks[currentImageIndex];
+}
+
+galleryTriggers.forEach(function (image, index) {
 
     image.addEventListener("click", function () {
 
-        const imagePath = this.getAttribute("data-image");
+        currentImageIndex = index;
 
-        modalImage.src = imagePath;
-        modalImage.alt = this.alt;
+        updateGalleryModal();
 
     });
+
+});
+
+previousImage.addEventListener("click", function () {
+
+    currentImageIndex--;
+
+    if (currentImageIndex < 0) {
+        currentImageIndex = galleryTriggers.length - 1;
+    }
+
+    updateGalleryModal();
+
+});
+
+nextImage.addEventListener("click", function () {
+
+    currentImageIndex++;
+
+    if (currentImageIndex >= galleryTriggers.length) {
+        currentImageIndex = 0;
+    }
+
+    updateGalleryModal();
 
 });
