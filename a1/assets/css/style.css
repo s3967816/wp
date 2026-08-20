@@ -119,3 +119,54 @@ main h1 {
     color: var(--white);
     margin-bottom: 0;
 }
+
+.books-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.section-heading h2 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.section-heading p {
+    color: var(--text-light);
+}
+
+.book-card {
+    height: 100%;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.book-cover {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.book-card-body {
+    padding: 1rem;
+}
+
+.book-card-body h3 {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    margin-bottom: 0.4rem;
+}
+
+.book-card-body p {
+    color: var(--text-light);
+    margin-bottom: 0;
+}
