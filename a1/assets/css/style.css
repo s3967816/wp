@@ -293,3 +293,79 @@ main h1 {
     margin: 0 auto;
     object-fit: contain;
 }
+
+
+.gallery-modal {
+    background-color: #1e293b;
+    border: none;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.gallery-modal .modal-header {
+    background-color: #14b8a6;
+    color: #ffffff;
+    border-bottom: none;
+    padding: 0.75rem 1rem;
+}
+
+.gallery-modal .modal-title {
+    font-family: "Elms Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    color: #ffffff;
+}
+
+.gallery-modal .btn-close {
+    filter: brightness(0) invert(1);
+}
+
+.gallery-modal .modal-body {
+    background-color: #1e293b;
+    padding: 2rem;
+}
+
+.gallery-modal .modal-footer {
+    background-color: #0f172a;
+    border-top: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding: 0.75rem;
+}
+
+.modal-navigation {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+
+    background-color: #475569;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 4px;
+
+    padding: 0.5rem 0.8rem;
+
+    font-family: "Elms Sans", sans-serif;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.modal-navigation:hover {
+    background-color: #64748b;
+}
+
+.modal-navigation.next {
+    background-color: #14b8a6;
+}
+
+.modal-navigation.next:hover {
+    background-color: #0d9488;
+}
+
+.modal-navigation .material-icons {
+    font-size: 1rem;
+}
