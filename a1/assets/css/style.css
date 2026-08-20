@@ -1,1 +1,50 @@
+:root {
+    --primary: #0d9488;
+    --primary-dark: #0f766e;
+    --primary-light: #14b8a6;
 
+    --secondary: #d97706;
+    --amber: #fbbf24;
+
+    --green: #10b981;
+
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+
+    --background: #f9fafb;
+    --white: #ffffff;
+    --border: #e5e7eb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--text-dark);
+    font-family: "Elms Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Righteous", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background-color: var(--white);
+}
+
+footer {
+    background-color: var(--text-dark);
+    color: var(--white);
+}
