@@ -48,3 +48,45 @@ footer {
     background-color: var(--text-dark);
     color: var(--white);
 }
+
+.navbar {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    color: var(--primary);
+    font-family: "Righteous", sans-serif;
+    font-size: 1.6rem;
+}
+
+.navbar-brand:hover {
+    color: var(--primary-dark);
+}
+
+.navbar-brand .material-icons {
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: var(--text-dark);
+    font-weight: 500;
+    margin-left: 0.75rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
+}
+
+main {
+    min-height: 70vh;
+}
+
+main h1 {
+    color: var(--primary);
+}
