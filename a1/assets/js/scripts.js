@@ -19,3 +19,20 @@ if (statusFilter) {
         });
     });
 }
+
+
+const galleryTriggers = document.querySelectorAll(".gallery-trigger");
+const modalImage = document.getElementById("modalImage");
+
+galleryTriggers.forEach(function (image) {
+
+    image.addEventListener("click", function () {
+
+        const imagePath = this.getAttribute("data-image");
+
+        modalImage.src = imagePath;
+        modalImage.alt = this.alt;
+
+    });
+
+});
