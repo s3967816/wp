@@ -23,8 +23,8 @@
 
 body {
     margin: 0;
-    background-color: var(--background);
-    color: var(--text-dark);
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    color: #1f2937;
     font-family: "Elms Sans", sans-serif;
 }
 
@@ -42,17 +42,43 @@ a {
 }
 
 header {
-    background-color: var(--white);
+    position: relative;
+    background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%);
+}
+
+header::after {
+    content: "";
+    display: block;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        #fbbf24 0%,
+        #14b8a6 50%,
+        #d97706 100%
+    );
 }
 
 footer {
-    background-color: var(--text-dark);
-    color: var(--white);
+    position: relative;
+    background: linear-gradient(
+        135deg,
+        #0f766e 0%,
+        #0d9488 45%,
+        #134e4a 100%
+    );
+    color: #ffffff;
 }
 
-.navbar {
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--border);
+footer::before {
+    content: "";
+    display: block;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        #fbbf24 0%,
+        #14b8a6 50%,
+        #d97706 100%
+    );
 }
 
 .navbar-brand {
@@ -60,13 +86,13 @@ footer {
     align-items: center;
     gap: 0.5rem;
 
-    color: var(--primary);
+    color: #ffffff;
     font-family: "Righteous", sans-serif;
     font-size: 1.6rem;
 }
 
 .navbar-brand:hover {
-    color: var(--primary-dark);
+    color: #fbbf24;
 }
 
 .navbar-brand .material-icons {
@@ -74,14 +100,14 @@ footer {
 }
 
 .nav-link {
-    color: var(--text-dark);
+    color: #ffffff;
     font-weight: 500;
     margin-left: 0.75rem;
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--primary);
+    color: #fbbf24;
 }
 
 main {
@@ -368,4 +394,153 @@ main h1 {
 
 .modal-navigation .material-icons {
     font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (prefers-color-scheme: dark) {
+
+    body {
+        background: linear-gradient(
+            135deg,
+            #0f172a 0%,
+            #020617 100%
+        );
+        color: #f1f5f9;
+    }
+
+    header {
+        background: linear-gradient(
+            135deg,
+            #0c4a6e 0%,
+            #082f49 100%
+        );
+    }
+
+    header::after {
+        background: linear-gradient(
+            90deg,
+            #f59e0b 0%,
+            #38bdf8 50%,
+            #14b8a6 100%
+        );
+    }
+
+    footer {
+        background: linear-gradient(
+            135deg,
+            #082f49 0%,
+            #0c4a6e 45%,
+            #0f766e 100%
+        );
+    }
+
+    footer::before {
+        background: linear-gradient(
+            90deg,
+            #f59e0b 0%,
+            #38bdf8 50%,
+            #14b8a6 100%
+        );
+    }
+
+    .navbar-brand,
+    .nav-link {
+        color: #f1f5f9;
+    }
+
+    .navbar-brand:hover,
+    .nav-link:hover,
+    .nav-link.active {
+        color: #f59e0b;
+    }
+
+    main h1,
+    .section-heading h2 {
+        color: #38bdf8;
+    }
+
+    .section-heading p,
+    .gallery-intro {
+        color: #cbd5e1;
+    }
+
+    .book-card,
+    .books-table-container,
+    .filter-section,
+    .gallery-item {
+        background-color: #0f172a;
+        border-color: #334155;
+    }
+
+    .book-card-body h3 {
+        color: #f1f5f9;
+    }
+
+    .book-card-body p {
+        color: #cbd5e1;
+    }
+
+    .books-table td {
+        background-color: #0f172a;
+        color: #f1f5f9;
+        border-color: #334155;
+    }
+
+    .filter-section {
+        color: #f1f5f9;
+    }
 }
