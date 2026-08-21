@@ -933,11 +933,11 @@ main h1 {
 
 .home-carousel {
     width: 100%;
-    margin-top: 12px;
+    margin-top: 0px;
 }
 
 .home-carousel .carousel-item {
-    height: 230px;
+    height: 300px;
 }
 
 .home-carousel .carousel-item img {
