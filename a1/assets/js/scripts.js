@@ -42,55 +42,64 @@ const galleryBooks = [
     "Sapiens"
 ];
 
-let currentImageIndex = 0;
+if (
+    galleryTriggers.length > 0 &&
+    modalImage &&
+    modalTitle &&
+    previousImage &&
+    nextImage
+) {
 
-function updateGalleryModal() {
+    let currentImageIndex = 0;
 
-    const selectedImage = galleryTriggers[currentImageIndex];
+    function updateGalleryModal() {
 
-    const imagePath = selectedImage.getAttribute("data-image");
+        const selectedImage = galleryTriggers[currentImageIndex];
+        const imagePath = selectedImage.getAttribute("data-image");
 
-    modalImage.src = imagePath;
-    modalImage.alt = galleryBooks[currentImageIndex];
+        modalImage.src = imagePath;
+        modalImage.alt = galleryBooks[currentImageIndex];
 
-    modalTitle.textContent = galleryBooks[currentImageIndex];
-}
+        modalTitle.textContent = galleryBooks[currentImageIndex];
+    }
 
-galleryTriggers.forEach(function (image, index) {
+    galleryTriggers.forEach(function (image, index) {
 
-    image.addEventListener("click", function () {
+        image.addEventListener("click", function () {
 
-        currentImageIndex = index;
+            currentImageIndex = index;
+
+            updateGalleryModal();
+
+        });
+
+    });
+
+    previousImage.addEventListener("click", function () {
+
+        currentImageIndex--;
+
+        if (currentImageIndex < 0) {
+            currentImageIndex = galleryTriggers.length - 1;
+        }
 
         updateGalleryModal();
 
     });
 
-});
+    nextImage.addEventListener("click", function () {
 
-previousImage.addEventListener("click", function () {
+        currentImageIndex++;
 
-    currentImageIndex--;
+        if (currentImageIndex >= galleryTriggers.length) {
+            currentImageIndex = 0;
+        }
 
-    if (currentImageIndex < 0) {
-        currentImageIndex = galleryTriggers.length - 1;
-    }
+        updateGalleryModal();
 
-    updateGalleryModal();
+    });
 
-});
-
-nextImage.addEventListener("click", function () {
-
-    currentImageIndex++;
-
-    if (currentImageIndex >= galleryTriggers.length) {
-        currentImageIndex = 0;
-    }
-
-    updateGalleryModal();
-
-});
+}
 
 
 
