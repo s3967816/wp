@@ -65,47 +65,43 @@
 
             <form id="addBookForm">
 
-                <div class="row">
+                <!-- Book Title -->
+<div class="mb-3">
 
-                    <!-- Book Title -->
-                    <div class="col-md-6 mb-3">
+    <label for="title" class="form-label">
+        <span class="material-icons">title</span>
+        Book Title
+    </label>
 
-                        <label for="title" class="form-label">
-                            <span class="material-icons">title</span>
-                                Book Title
-                        </label>
+    <input
+        type="text"
+        class="form-control"
+        id="title"
+        name="title"
+        placeholder="Enter book title"
+        required
+    >
 
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="title"
-                            name="title"
-                            placeholder="Enter book title"
-                            required
-                        >
+</div>
 
-                    </div>
+<!-- Author Name -->
+<div class="mb-3">
 
-                    <!-- Author Name -->
-                    <div class="col-md-6 mb-3">
+    <label for="author" class="form-label">
+        <span class="material-icons">person</span>
+        Author Name
+    </label>
 
-                        <label for="author" class="form-label">
-                            <span class="material-icons">person</span>
-                                Author Name
-                        </label>
+    <input
+        type="text"
+        class="form-control"
+        id="author"
+        name="author"
+        placeholder="Enter author name"
+        required
+    >
 
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="author"
-                            name="author"
-                            placeholder="Enter author name"
-                            required
-                        >
-
-                    </div>
-
-                </div>
+</div>
 
                 <div class="row">
 
@@ -135,6 +131,12 @@
                             <option value="History">History</option>
                             <option value="Self Help">Self Help</option>
                         </select>
+
+                    </div>
+
+                </div>
+
+                    
     <div class="row">
 
     <!-- Publication Year -->
@@ -253,30 +255,7 @@
 
                 </div>
 
-                <div class="row">
-
-                    <!-- Price -->
-                    <div class="col-md-6 mb-3">
-
-                        <label for="price" class="form-label">
-                            Price
-                        </label>
-
-                        <input
-                            type="number"
-                            class="form-control"
-                            id="price"
-                            name="price"
-                            placeholder="Enter price"
-                            step="0.01"
-                            min="0"
-                            required
-                        >
-
-                    </div>
-
-                    
-
+                
                 <!-- Upload Cover Image -->
                 <div class="mb-3">
 
