@@ -564,48 +564,6 @@ main h1 {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (prefers-color-scheme: dark) {
 
     body {
@@ -848,4 +806,169 @@ main h1 {
 
 .home-status.sold {
     background-color: #475569;
+}
+
+
+
+
+
+/* =========================================
+   FEATURED BOOKS - HOME PAGE
+   ========================================= */
+
+.featured-books {
+    width: 100%;
+    max-width: 620px;
+    margin: 18px auto 55px;
+    padding: 0 16px;
+}
+
+.featured-books .row {
+    margin-left: -4px;
+    margin-right: -4px;
+}
+
+.featured-books .row > div {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.featured-heading {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.featured-heading .material-icons {
+    color: #14b8a6;
+    font-size: 18px;
+}
+
+.featured-heading h2 {
+    margin: 0;
+    color: #f1f5f9;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
+/* Book cards */
+
+.home-book-card {
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.home-book-card > img {
+    display: block;
+    width: 100%;
+    height: 155px;
+    object-fit: cover;
+}
+
+
+/* White section underneath cover */
+
+.home-book-info {
+    background-color: #ffffff;
+    min-height: 92px;
+    padding: 9px;
+}
+
+.home-book-info h3 {
+    margin: 0 0 5px;
+    color: #1f2937;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.home-book-info p {
+    margin: 0 0 4px;
+    color: #64748b;
+    font-size: 0.6rem;
+}
+
+.home-book-info strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #1f2937;
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+
+/* Availability badges */
+
+.home-status {
+    display: inline-block;
+    padding: 3px 6px;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 0.55rem;
+    font-weight: 600;
+}
+
+.home-status.available {
+    background-color: #10b981;
+}
+
+.home-status.reserved {
+    background-color: #f59e0b;
+}
+
+.home-status.sold {
+    background-color: #475569;
+}
+
+
+
+
+/* =========================================
+   HOME CAROUSEL
+   ========================================= */
+
+.home-carousel {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.home-carousel .carousel-item {
+    height: 230px;
+}
+
+.home-carousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-carousel .carousel-caption {
+    left: 0;
+    right: 0;
+    bottom: 4px;
+
+    padding: 8px;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(2, 6, 23, 0.7)
+    );
+
+    border-radius: 0;
+}
+
+.home-carousel .carousel-caption h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.home-carousel .carousel-caption p {
+    display: none;
 }
