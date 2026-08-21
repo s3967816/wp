@@ -107,47 +107,37 @@ if (imageInput && imagePreview) {
 
     imageInput.addEventListener("change", function () {
 
-        // Clear the old preview
         imagePreview.innerHTML = "";
 
-        const file = this.files[0];
+        const file = imageInput.files[0];
 
-        // Stop if no file has been selected
         if (!file) {
             return;
         }
 
-        // Get the file extension
-        const fileName = file.name;
-        const extension = fileName.split(".").pop().toLowerCase();
+        const extension = file.name.split(".").pop().toLowerCase();
 
-        // Check if the extension is allowed
         if (!allowedExtensions.includes(extension)) {
 
-            alert(
-                "Invalid image file. Please choose a JPG, JPEG, PNG, GIF or WEBP image."
-            );
+            alert("Please select a JPG, JPEG, PNG, GIF or WEBP image.");
 
-            // Clear the invalid file
             imageInput.value = "";
 
             return;
         }
 
-        // Read the valid image
         const reader = new FileReader();
 
-        reader.addEventListener("load", function () {
+        reader.onload = function (event) {
 
             const previewImage = document.createElement("img");
 
-            previewImage.src = reader.result;
+            previewImage.src = event.target.result;
             previewImage.alt = "Book cover preview";
-            previewImage.classList.add("book-cover-preview");
+            previewImage.className = "book-cover-preview";
 
             imagePreview.appendChild(previewImage);
-
-        });
+        };
 
         reader.readAsDataURL(file);
 
