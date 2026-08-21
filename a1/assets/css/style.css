@@ -699,3 +699,105 @@ main h1 {
         color: #f1f5f9;
     }
 }
+
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+
+.navbar {
+    padding: 8px 0;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* BookVerse logo */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    margin-right: 18px;
+
+    color: #ffffff !important;
+
+    font-family: "Elms Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.navbar-brand .material-icons {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+/* Navigation links */
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.navbar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    padding: 5px 7px;
+
+    color: #ffffff !important;
+
+    font-family: "Elms Sans", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+
+    text-decoration: none;
+}
+
+.navbar-nav .nav-link .material-icons {
+    font-size: 12px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #38bdf8 !important;
+}
+
+.navbar-nav .nav-link.active {
+    color: #ffffff !important;
+}
+
+
+@media (prefers-color-scheme: dark) {
+
+    header {
+        background: linear-gradient(
+            135deg,
+            #0c4a6e 0%,
+            #082f49 100%
+        );
+    }
+
+    header::after {
+        content: "";
+        display: block;
+
+        height: 3px;
+
+        background: linear-gradient(
+            90deg,
+            #f59e0b 0%,
+            #38bdf8 50%,
+            #14b8a6 100%
+        );
+    }
+
+}
+
+
