@@ -396,7 +396,128 @@ main h1 {
     font-size: 1rem;
 }
 
+/* =========================================
+   ADD BOOK PAGE
+   ========================================= */
 
+.add-book-container {
+    max-width: 412px;
+    margin: 0 auto;
+    padding: 16px;
+    background-color: #1e293b;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.add-book-container .form-label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    margin-bottom: 5px;
+
+    color: #f1f5f9;
+    font-size: 0.72rem;
+    font-weight: 500;
+}
+
+.add-book-container .form-label .material-icons {
+    font-size: 12px;
+}
+
+.add-book-container .form-control,
+.add-book-container .form-select {
+    height: 25px;
+
+    padding: 4px 7px;
+
+    background-color: #0f172a;
+    color: #f1f5f9;
+
+    border: 1px solid #334155;
+    border-radius: 4px;
+
+    font-size: 0.7rem;
+}
+
+.add-book-container textarea.form-control {
+    height: auto;
+    min-height: 58px;
+    resize: vertical;
+}
+
+.add-book-container .form-control::placeholder {
+    color: #94a3b8;
+}
+
+.add-book-container .form-select {
+    color: #f1f5f9;
+}
+
+.add-book-container .form-select option {
+    background-color: #0f172a;
+    color: #f1f5f9;
+}
+
+.add-book-container .form-control:focus,
+.add-book-container .form-select:focus {
+    background-color: #0f172a;
+    color: #f1f5f9;
+    border-color: #14b8a6;
+    box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.2);
+}
+
+.add-book-container .form-check {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    padding-left: 0;
+
+    margin-top: 4px;
+}
+
+.add-book-container .form-check-input {
+    margin: 0;
+
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+.add-book-container .form-check-label {
+    color: #f1f5f9;
+    font-size: 0.68rem;
+}
+
+.add-book-button {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    height: 25px;
+
+    padding: 4px;
+
+    background-color: #14b8a6 !important;
+    border: none !important;
+    border-radius: 4px;
+
+    color: #ffffff !important;
+
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.add-book-button:hover {
+    background-color: #0d9488 !important;
+}
+
+.add-book-button .material-icons {
+    font-size: 12px;
+}
 
 
 
