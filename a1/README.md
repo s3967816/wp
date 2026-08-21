@@ -106,7 +106,7 @@ Deployment
 
 The completed website is deployed using the required course hosting environment.
 
-Live Website: ADD-LIVE-WEBSITE-URL-HERE
+Live Website: (http://titan.csit.rmit.edu.au/~s3967816/wp/)
 
 GitHub Repository: (https://github.com/s3967816/wp.git)
 Known Limitations
