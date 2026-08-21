@@ -71,7 +71,8 @@
                     <div class="col-md-6 mb-3">
 
                         <label for="title" class="form-label">
-                            Book Title
+                            <span class="material-icons">title</span>
+                                Book Title
                         </label>
 
                         <input
@@ -89,7 +90,8 @@
                     <div class="col-md-6 mb-3">
 
                         <label for="author" class="form-label">
-                            Author Name
+                            <span class="material-icons">person</span>
+                                Author Name
                         </label>
 
                         <input
@@ -114,96 +116,130 @@
                             Genre
                         </label>
 
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="genre"
-                            name="genre"
-                            placeholder="Enter genre"
-                            required
-                        >
-
-                    </div>
-
-                    <!-- Publication Year -->
-                    <div class="col-md-6 mb-3">
-
-                        <label for="publication_year" class="form-label">
-                            Publication Year
-                        </label>
-
-                        <input
-                            type="number"
-                            class="form-control"
-                            id="publication_year"
-                            name="publication_year"
-                            placeholder="Enter publication year"
-                            required
-                        >
-
-                    </div>
-
-                </div>
-
-                <div class="row">
-
-                    <!-- ISBN -->
-                    <div class="col-md-6 mb-3">
-
-                        <label for="isbn" class="form-label">
-                            ISBN
-                        </label>
-
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="isbn"
-                            name="isbn"
-                            placeholder="Enter ISBN"
-                            required
-                        >
-
-                    </div>
-
-                    <!-- Book Condition -->
-                    <div class="col-md-6 mb-3">
-
-                        <label for="book_condition" class="form-label">
-                            Book Condition
-                        </label>
-
                         <select
                             class="form-select"
-                            id="book_condition"
-                            name="book_condition"
+                            id="genre"
+                            name="genre"
                             required
-                        >
+                            >
                             <option value="" selected disabled>
-                                Select condition
+                                Select a genre
                             </option>
-
-                            <option value="New">
-                                New
-                            </option>
-
-                            <option value="Gently Used">
-                                Gently Used
-                            </option>
-
-                            <option value="Fair">
-                                Fair
-                            </option>
+                        
+                            <option value="Fiction">Fiction</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Science Fiction">Science Fiction</option>
+                            <option value="Mystery">Mystery</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Biography">Biography</option>
+                            <option value="History">History</option>
+                            <option value="Self Help">Self Help</option>
                         </select>
+    <div class="row">
 
-                    </div>
+    <!-- Publication Year -->
+            <div class="col-md-6 mb-3">
 
-                </div>
+            <label for="publication_year" class="form-label">
+            <span class="material-icons">calendar_month</span>
+            Publication Year
+        
+            </label>
+
+            <input
+            type="number"
+            class="form-control"
+            id="publication_year"
+            name="publication_year"
+            placeholder="2024"
+            required
+            >
+
+            </div>
+
+    <!-- Price -->
+    <div class="col-md-6 mb-3">
+
+        <label for="price" class="form-label">
+            <span class="material-icons">attach_money</span>
+            Price ($)
+        </label>
+
+        <input
+            type="number"
+            class="form-control"
+            id="price"
+            name="price"
+            placeholder="19.99"
+            step="0.01"
+            min="0"
+            required
+        >
+
+    </div>
+
+</div>
+<div class="row">
+
+    <!-- ISBN -->
+    <div class="col-md-6 mb-3">
+
+        <label for="isbn" class="form-label">
+            ISBN
+        </label>
+
+        <input
+            type="text"
+            class="form-control"
+            id="isbn"
+            name="isbn"
+            placeholder="978-1-234567-89-0"
+            required
+        >
+
+    </div>
+
+    <!-- Book Condition -->
+    <div class="col-md-6 mb-3">
+
+        <label for="book_condition" class="form-label">
+            <span class="material-icons">inventory_2</span>
+            Book Condition
+        </label>
+
+        <select
+            class="form-select"
+            id="book_condition"
+            name="book_condition"
+            required
+        >
+            <option value="" selected disabled>
+                Select condition
+            </option>
+
+            <option value="New">
+                New
+            </option>
+
+            <option value="Gently Used">
+                Gently Used
+            </option>
+
+            <option value="Fair">
+                Fair
+            </option>
+        </select>
+
+    </div>
+
+</div>
 
                 <!-- Description -->
                 <div class="mb-3">
 
                     <label for="description" class="form-label">
-                        Description
+                        <span class="material-icons">description</span>
+                            Description
                     </label>
 
                     <textarea
@@ -239,45 +275,14 @@
 
                     </div>
 
-                    <!-- Status -->
-                    <div class="col-md-6 mb-3">
-
-                        <label for="status" class="form-label">
-                            Status
-                        </label>
-
-                        <select
-                            class="form-select"
-                            id="status"
-                            name="status"
-                            required
-                        >
-                            <option value="" selected disabled>
-                                Select status
-                            </option>
-
-                            <option value="Available">
-                                Available
-                            </option>
-
-                            <option value="Reserved">
-                                Reserved
-                            </option>
-
-                            <option value="Sold">
-                                Sold
-                            </option>
-                        </select>
-
-                    </div>
-
-                </div>
+                    
 
                 <!-- Upload Cover Image -->
                 <div class="mb-3">
 
                     <label for="image_path" class="form-label">
-                        Upload Cover Image
+                        <span class="material-icons">image</span>
+                            Upload Cover Image
                     </label>
 
                     <input
@@ -292,6 +297,39 @@
                     <div id="imagePreview" class="mt-3"></div>
 
                 </div>
+
+        <div class="mb-3">
+        <!-- status-->
+    <label for="status" class="form-label">
+        <span class="material-icons">check_circle</span>
+        Availability Status
+    </label>
+
+    <select
+        class="form-select"
+        id="status"
+        name="status"
+        required
+    >
+        <option value="Available">
+            Available
+        </option>
+
+        <option value="Reserved">
+            Reserved
+        </option>
+
+        <option value="Sold">
+            Sold
+        </option>
+    </select>
+
+</div>
+
+
+
+
+                    
 
                 <!-- Agreement -->
                 <div class="form-check mb-3">
@@ -313,9 +351,9 @@
                 <button
                     type="submit"
                     class="btn btn-primary add-book-button"
-                >
-                    <span class="material-icons">add</span>
-                    Add Book to Collection
+                    >
+                    <span class="material-icons">lock</span>
+                        Add Book to Collection
                 </button>
 
             </form>
