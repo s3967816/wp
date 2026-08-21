@@ -91,3 +91,66 @@ nextImage.addEventListener("click", function () {
     updateGalleryModal();
 
 });
+
+
+
+// =========================================
+// ADD BOOK - IMAGE VALIDATION AND PREVIEW
+// =========================================
+
+const imageInput = document.getElementById("image_path");
+const imagePreview = document.getElementById("imagePreview");
+
+if (imageInput && imagePreview) {
+
+    const allowedExtensions = ["jpg", "jpeg", "png", "gif", "webp"];
+
+    imageInput.addEventListener("change", function () {
+
+        // Clear the old preview
+        imagePreview.innerHTML = "";
+
+        const file = this.files[0];
+
+        // Stop if no file has been selected
+        if (!file) {
+            return;
+        }
+
+        // Get the file extension
+        const fileName = file.name;
+        const extension = fileName.split(".").pop().toLowerCase();
+
+        // Check if the extension is allowed
+        if (!allowedExtensions.includes(extension)) {
+
+            alert(
+                "Invalid image file. Please choose a JPG, JPEG, PNG, GIF or WEBP image."
+            );
+
+            // Clear the invalid file
+            imageInput.value = "";
+
+            return;
+        }
+
+        // Read the valid image
+        const reader = new FileReader();
+
+        reader.addEventListener("load", function () {
+
+            const previewImage = document.createElement("img");
+
+            previewImage.src = reader.result;
+            previewImage.alt = "Book cover preview";
+            previewImage.classList.add("book-cover-preview");
+
+            imagePreview.appendChild(previewImage);
+
+        });
+
+        reader.readAsDataURL(file);
+
+    });
+
+}
