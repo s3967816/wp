@@ -801,3 +801,51 @@ main h1 {
 }
 
 
+/* White section underneath book covers */
+
+.home-book-info {
+    background-color: #ffffff;
+    padding: 9px;
+    min-height: 92px;
+}
+
+.home-book-info h3 {
+    margin: 0 0 5px;
+    color: #1f2937;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.home-book-info p {
+    margin: 0 0 4px;
+    color: #64748b;
+    font-size: 0.6rem;
+}
+
+.home-book-info strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #1f2937;
+    font-size: 0.65rem;
+}
+
+.home-status {
+    display: inline-block;
+    padding: 3px 6px;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 0.55rem;
+    font-weight: 600;
+}
+
+.home-status.available {
+    background-color: #10b981;
+}
+
+.home-status.reserved {
+    background-color: #f59e0b;
+}
+
+.home-status.sold {
+    background-color: #475569;
+}
