@@ -972,3 +972,22 @@ main h1 {
 .home-carousel .carousel-caption p {
     display: none;
 }
+
+
+#imagePreview {
+    margin-top: 10px;
+}
+
+.book-cover-preview {
+    display: block;
+
+    width: 120px;
+    max-height: 170px;
+
+    object-fit: cover;
+
+    border: 1px solid #334155;
+    border-radius: 5px;
+
+    margin: 0 auto;
+}
