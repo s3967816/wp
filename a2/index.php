@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookVerse - Home</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Elms+Sans:wght@400;500;600;700&family=Righteous&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Material Icons -->
+    <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                <span class="material-icons">menu_book</span>
+                <span>BookVerse</span>
+            </a>
+
+            <div class="navbar-nav">
+
+                <a class="nav-link active" href="index.html">
+                    <span class="material-icons">home</span>
+                    <span>Home</span>
+                </a>
+
+                <a class="nav-link" href="books.html">
+                    <span class="material-icons">menu_book</span>
+                    <span>Browse Books</span>
+                </a>
+
+                <a class="nav-link" href="gallery.html">
+                    <span class="material-icons">photo_library</span>
+                    <span>Gallery</span>
+                </a>
+
+                <a class="nav-link" href="add.html">
+                    <span class="material-icons">add_circle</span>
+                    <span>Add Book</span>
+                </a>
+
+            </div>
+
+        </div>
+    </nav>
+</header>
+    <main>
+
+    <section class="home-carousel">
+        <div id="bookCarousel" class="carousel slide" data-bs-ride="carousel">
+
+            
+            <!-- Carousel slides -->
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img src="assets/images/covers/1.png"
+                         class="d-block w-100"
+                         alt="Book cover">
+                    <div class="carousel-caption">
+                        <h2>The Midnight Library</h2>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="assets/images/covers/2.png"
+                         class="d-block w-100"
+                         alt="Book cover">
+                    <div class="carousel-caption">
+                        <h2>Project Hail Mary</h2>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="assets/images/covers/3.png"
+                         class="d-block w-100"
+                         alt="Book cover">
+                    <div class="carousel-caption">
+                        <h2>Dune</h2>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="assets/images/covers/4.png"
+                         class="d-block w-100"
+                         alt="Book cover">
+                    <div class="carousel-caption">
+                        <h2>The Hobbit</h2>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Previous button -->
+            <button class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#bookCarousel"
+                    data-bs-slide="prev">
+
+                <span class="carousel-control-prev-icon"
+                      aria-hidden="true"></span>
+
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <!-- Next button -->
+            <button class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#bookCarousel"
+                    data-bs-slide="next">
+
+                <span class="carousel-control-next-icon"
+                      aria-hidden="true"></span>
+
+                <span class="visually-hidden">Next</span>
+            </button>
+
+        </div>
+        </section>
+
+    <!-- Featured Books -->
+<section class="featured-books">
+
+    <div class="featured-heading">
+        <span class="material-icons">favorite</span>
+        <h2>Featured Books</h2>
+    </div>
+
+    <div class="row g-3">
+
+        <!-- Book 1 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="home-book-card">
+
+                <img
+                    src="assets/images/covers/1.png"
+                    alt="The Midnight Library"
+                >
+
+                <div class="home-book-info">
+                    <h3>The Midnight Library</h3>
+                    <p>Fiction · Matt Haig</p>
+                    <strong>$24.99</strong>
+
+                    <span class="home-status available">
+                        Available
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Book 2 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="home-book-card">
+
+                <img
+                    src="assets/images/covers/2.png"
+                    alt="Project Hail Mary"
+                >
+
+                <div class="home-book-info">
+                    <h3>Project Hail Mary</h3>
+                    <p>Science Fiction · Andy Weir</p>
+                    <strong>$28.99</strong>
+
+                    <span class="home-status available">
+                        Available
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Book 3 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="home-book-card">
+
+                <img
+                    src="assets/images/covers/3.png"
+                    alt="Dune"
+                >
+
+                <div class="home-book-info">
+                    <h3>Dune</h3>
+                    <p>Science Fiction · Frank Herbert</p>
+                    <strong>$22.99</strong>
+
+                    <span class="home-status available">
+                        Available
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Book 4 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="home-book-card">
+
+                <img
+                    src="assets/images/covers/4.png"
+                    alt="The Hobbit"
+                >
+
+                <div class="home-book-info">
+                    <h3>The Hobbit</h3>
+                    <p>Fantasy · J.R.R. Tolkien</p>
+                    <strong>$18.99</strong>
+
+                    <span class="home-status available">
+                        Available
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Book 5 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="home-book-card">
+
+                <img
+                    src="assets/images/covers/5.png"
+                    alt="1984"
+                >
+
+                <div class="home-book-info">
+                    <h3>1984</h3>
+                    <p>Dystopian · George Orwell</p>
+                    <strong>$16.99</strong>
+
+                    <span class="home-status available">
+                        Available
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Book 6 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="home-book-card">
+
+                <img
+                    src="assets/images/covers/6.png"
+                    alt="Pride and Prejudice"
+                >
+
+                <div class="home-book-info">
+                    <h3>Pride and Prejudice</h3>
+                    <p>Romance · Jane Austen</p>
+                    <strong>$14.99</strong>
+
+                    <span class="home-status reserved">
+                        Reserved
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Book 7 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="home-book-card">
+
+                <img
+                    src="assets/images/covers/7.png"
+                    alt="To Kill a Mockingbird"
+                >
+
+                <div class="home-book-info">
+                    <h3>To Kill a Mockingbird</h3>
+                    <p>Fiction · Harper Lee</p>
+                    <strong>$19.99</strong>
+
+                    <span class="home-status available">
+                        Available
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Book 8 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="home-book-card">
+
+                <img
+                    src="assets/images/covers/8.png"
+                    alt="The Great Gatsby"
+                >
+
+                <div class="home-book-info">
+                    <h3>The Great Gatsby</h3>
+                    <p>Fiction · F. Scott Fitzgerald</p>
+                    <strong>$15.99</strong>
+
+                    <span class="home-status sold">
+                        Sold
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+  <footer class="py-4">
+    <div class="container">
+        <p class="mb-0">&copy; 2026 BookVerse</p>
+    </div>
+</footer>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script src="assets/js/scripts.js"></script>
+  
+</body>
+</html>

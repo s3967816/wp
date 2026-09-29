@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookVerse - Gallery</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Elms+Sans:wght@400;500;600;700&family=Righteous&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Material Icons -->
+    <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+   <header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                <span class="material-icons">menu_book</span>
+                <span>BookVerse</span>
+            </a>
+
+            <div class="navbar-nav">
+
+                <a class="nav-link" href="index.html">
+                    <span class="material-icons">home</span>
+                    <span>Home</span>
+                </a>
+
+                <a class="nav-link" href="books.html">
+                    <span class="material-icons">menu_book</span>
+                    <span>Browse Books</span>
+                </a>
+
+                <a class="nav-link active" href="gallery.html">
+                    <span class="material-icons">photo_library</span>
+                    <span>Gallery</span>
+                </a>
+
+                <a class="nav-link" href="add.html">
+                    <span class="material-icons">add_circle</span>
+                    <span>Add Book</span>
+                </a>
+
+            </div>
+
+        </div>
+    </nav>
+</header>
+
+    <main class="container py-5">
+
+        <div class="page-heading mb-4">
+            <span class="material-icons">photo_library</span>
+            <h1>Book Gallery</h1>
+        </div>
+
+        <p class="gallery-intro">
+            Explore our collection of book covers.
+        </p>
+
+        <section class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="assets/images/covers/1.png"
+                     alt="Book cover 1"
+                     class="gallery-image gallery-trigger"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="assets/images/covers/1.png">
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/images/covers/2.png"
+                     alt="Book cover 2"
+                     class="gallery-image gallery-trigger"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="assets/images/covers/2.png">
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/images/covers/3.png"
+                     alt="Book cover 3"
+                     class="gallery-image gallery-trigger"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="assets/images/covers/3.png">
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/images/covers/4.png"
+                     alt="Book cover 4"
+                     class="gallery-image gallery-trigger"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="assets/images/covers/4.png">
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/images/covers/5.png"
+                     alt="Book cover 5"
+                     class="gallery-image gallery-trigger"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="assets/images/covers/5.png">
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/images/covers/6.png"
+                     alt="Book cover 6"
+                     class="gallery-image gallery-trigger"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="assets/images/covers/6.png">
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/images/covers/7.png"
+                     alt="Book cover 7"
+                     class="gallery-image gallery-trigger"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="assets/images/covers/7.png">
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/images/covers/8.png"
+                     alt="Book cover 8"
+                     class="gallery-image gallery-trigger"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="assets/images/covers/8.png">
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/images/covers/9.png"
+                     alt="Book cover 9"
+                     class="gallery-image gallery-trigger"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="assets/images/covers/9.png">
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/images/covers/10.png"
+                     alt="Book cover 10"
+                     class="gallery-image gallery-trigger"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="assets/images/covers/10.png">
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/images/covers/11.png"
+                     alt="Book cover 11"
+                    class="gallery-image gallery-trigger"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="assets/images/covers/11.png">
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/images/covers/12.png"
+                     alt="Book cover 12"
+                     class="gallery-image gallery-trigger"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="assets/images/covers/12.png">
+            </div>
+
+        </section>
+        
+            <div class="modal fade" id="galleryModal" tabindex="-1"
+     aria-labelledby="galleryModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+
+        <div class="modal-content gallery-modal">
+
+            <div class="modal-header">
+
+                <h2 class="modal-title" id="galleryModalLabel">
+                    Book Cover
+                </h2>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close">
+                </button>
+
+            </div>
+
+            <div class="modal-body text-center">
+
+                <img id="modalImage"
+                     src=""
+                     alt="Selected book cover"
+                     class="modal-book-image">
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="modal-navigation"
+                        id="previousImage">
+                    <span class="material-icons">chevron_left</span>
+                    Previous
+                </button>
+
+                <button type="button"
+                        class="modal-navigation next"
+                        id="nextImage">
+                    Next
+                    <span class="material-icons">chevron_right</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+    </main>
+
+    <footer class="py-4">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 BookVerse</p>
+        </div>
+    </footer>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script src="assets/js/scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookVerse - Add Book</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Elms+Sans:wght@400;500;600;700&family=Righteous&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Material Icons -->
+    <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+            <!-- BookVerse Logo -->
+            <a class="navbar-brand" href="index.html">
+                <span class="material-icons">menu_book</span>
+                <span>BookVerse</span>
+            </a>
+
+            <!-- Navigation -->
+            <div class="navbar-nav">
+
+                <a class="nav-link" href="index.html">
+                    <span class="material-icons">home</span>
+                    <span>Home</span>
+                </a>
+
+                <a class="nav-link" href="books.html">
+                    <span class="material-icons">menu_book</span>
+                    <span>Browse Books</span>
+                </a>
+
+                <a class="nav-link" href="gallery.html">
+                    <span class="material-icons">photo_library</span>
+                    <span>Gallery</span>
+                </a>
+
+                <a class="nav-link active" href="add.html">
+                    <span class="material-icons">add_circle</span>
+                    <span>Add Book</span>
+                </a>
+
+            </div>
+
+        </div>
+    </nav>
+</header>
+
+    <main class="container py-5">
+
+        <div class="page-heading mb-4">
+            <span class="material-icons">add_circle</span>
+            <h1>Add New Book</h1>
+        </div>
+
+        <section class="add-book-container">
+
+            <form id="addBookForm">
+
+                <!-- Book Title -->
+<div class="mb-3">
+
+    <label for="title" class="form-label">
+        <span class="material-icons">title</span>
+        Book Title
+    </label>
+
+    <input
+        type="text"
+        class="form-control"
+        id="title"
+        name="title"
+        placeholder="Enter book title"
+        required
+    >
+
+</div>
+
+<!-- Author Name -->
+<div class="mb-3">
+
+    <label for="author" class="form-label">
+        <span class="material-icons">person</span>
+        Author Name
+    </label>
+
+    <input
+        type="text"
+        class="form-control"
+        id="author"
+        name="author"
+        placeholder="Enter author name"
+        required
+    >
+
+</div>
+
+               
+
+                    <!-- Genre -->
+                    <div class="mb-3">
+
+                        <label for="genre" class="form-label">
+                            Genre
+                        </label>
+
+                        <select
+                            class="form-select"
+                            id="genre"
+                            name="genre"
+                            required
+                            >
+                            <option value="" selected disabled>
+                                Select a genre
+                            </option>
+                        
+                            <option value="Fiction">Fiction</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Science Fiction">Science Fiction</option>
+                            <option value="Mystery">Mystery</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Biography">Biography</option>
+                            <option value="History">History</option>
+                            <option value="Self Help">Self Help</option>
+                        </select>
+
+                    </div>
+
+                
+
+                    
+    <div class="row">
+
+    <!-- Publication Year -->
+            <div class="col-md-6 mb-3">
+
+            <label for="publication_year" class="form-label">
+            <span class="material-icons">calendar_month</span>
+            Publication Year
+        
+            </label>
+
+            <input
+            type="number"
+            class="form-control"
+            id="publication_year"
+            name="publication_year"
+            placeholder="2024"
+            required
+            >
+
+            </div>
+
+    <!-- Price -->
+    <div class="col-md-6 mb-3">
+
+        <label for="price" class="form-label">
+            <span class="material-icons">attach_money</span>
+            Price ($)
+        </label>
+
+        <input
+            type="number"
+            class="form-control"
+            id="price"
+            name="price"
+            placeholder="19.99"
+            step="0.01"
+            min="0"
+            required
+        >
+
+    </div>
+
+</div>
+<div class="row">
+
+    <!-- ISBN -->
+    <div class="col-md-6 mb-3">
+
+        <label for="isbn" class="form-label">
+            ISBN
+        </label>
+
+        <input
+            type="text"
+            class="form-control"
+            id="isbn"
+            name="isbn"
+            placeholder="978-1-234567-89-0"
+            required
+        >
+
+    </div>
+
+    <!-- Book Condition -->
+    <div class="col-md-6 mb-3">
+
+        <label for="book_condition" class="form-label">
+            <span class="material-icons">inventory_2</span>
+            Book Condition
+        </label>
+
+        <select
+            class="form-select"
+            id="book_condition"
+            name="book_condition"
+            required
+        >
+            <option value="" selected disabled>
+                Select condition
+            </option>
+
+            <option value="New">
+                New
+            </option>
+
+            <option value="Gently Used">
+                Gently Used
+            </option>
+
+            <option value="Fair">
+                Fair
+            </option>
+        </select>
+
+    </div>
+
+</div>
+
+                <!-- Description -->
+                <div class="mb-3">
+
+                    <label for="description" class="form-label">
+                        <span class="material-icons">description</span>
+                            Description
+                    </label>
+
+                    <textarea
+                        class="form-control"
+                        id="description"
+                        name="description"
+                        rows="4"
+                        placeholder="Enter book description"
+                        required
+                    ></textarea>
+
+                </div>
+
+                
+                <!-- Upload Cover Image -->
+                <div class="mb-3">
+
+                    <label for="image_path" class="form-label">
+                        <span class="material-icons">image</span>
+                            Upload Cover Image
+                    </label>
+
+                    <input
+                        type="file"
+                        class="form-control"
+                        id="image_path"
+                        name="image_path"
+                        accept=".jpg,.jpeg,.png,.gif,.webp"
+                        required
+                    >
+
+                    <div id="imagePreview" class="mt-3"></div>
+
+                </div>
+
+        <div class="mb-3">
+        <!-- status-->
+    <label for="status" class="form-label">
+        <span class="material-icons">check_circle</span>
+        Availability Status
+    </label>
+
+    <select
+        class="form-select"
+        id="status"
+        name="status"
+        required
+    >
+        <option value="Available">
+            Available
+        </option>
+
+        <option value="Reserved">
+            Reserved
+        </option>
+
+        <option value="Sold">
+            Sold
+        </option>
+    </select>
+
+</div>
+
+
+
+
+                    
+
+                <!-- Agreement -->
+                <div class="form-check mb-3">
+
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="agree"
+                        name="agree"
+                        required
+                    >
+
+                    <label class="form-check-label" for="agree">
+                        I agree that this book information is accurate and complete
+                    </label>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary add-book-button"
+                    >
+                    <span class="material-icons">lock</span>
+                        Add Book to Collection
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="py-4">
+
+        <div class="container">
+            <p class="mb-0">
+                &copy; 2026 BookVerse
+            </p>
+        </div>
+
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- Custom JavaScript -->
+    <script src="assets/js/scripts.js"></script>
+
+</body>
+
+</html>
