@@ -1,75 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php
+$pageTitle = 'Home | BookVerse';
 
-    <title>BookVerse - Home</title>
+require_once 'includes/db_connect.inc';
+include 'includes/header.inc';
+include 'includes/nav.inc';
+?>
 
-    <!-- Bootstrap CSS -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Elms+Sans:wght@400;500;600;700&family=Righteous&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- Material Icons -->
-    <link
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet"
-    >
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-
-
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-
-            <a class="navbar-brand" href="index.html">
-                <span class="material-icons">menu_book</span>
-                <span>BookVerse</span>
-            </a>
-
-            <div class="navbar-nav">
-
-                <a class="nav-link active" href="index.html">
-                    <span class="material-icons">home</span>
-                    <span>Home</span>
-                </a>
-
-                <a class="nav-link" href="books.html">
-                    <span class="material-icons">menu_book</span>
-                    <span>Browse Books</span>
-                </a>
-
-                <a class="nav-link" href="gallery.html">
-                    <span class="material-icons">photo_library</span>
-                    <span>Gallery</span>
-                </a>
-
-                <a class="nav-link" href="add.html">
-                    <span class="material-icons">add_circle</span>
-                    <span>Add Book</span>
-                </a>
-
-            </div>
-
-        </div>
-    </nav>
-</header>
-    <main>
+<main>
 
     <section class="home-carousel">
         <div id="bookCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -342,16 +279,4 @@
 
 </main>
 
-  <footer class="py-4">
-    <div class="container">
-        <p class="mb-0">&copy; 2026 BookVerse</p>
-    </div>
-</footer>
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-    </script>
-
-    <script src="assets/js/scripts.js"></script>
-  
-</body>
-</html>
+ <?php include 'includes/footer.inc';?>
