@@ -57,7 +57,9 @@ include 'includes/nav.inc';
 
                 <table class="table books-table">
 
-                    <?php while ($book = mysqli_fetch_assoc($booksResult)): ?>
+                    <tbody>
+
+<?php while ($book = mysqli_fetch_assoc($booksResult)): ?>
 
     <tr data-status="<?= htmlspecialchars($book['status']) ?>">
 
@@ -68,11 +70,8 @@ include 'includes/nav.inc';
         </td>
 
         <td><?= htmlspecialchars($book['author']) ?></td>
-
         <td><?= htmlspecialchars($book['genre']) ?></td>
-
         <td><?= htmlspecialchars($book['publication_year']) ?></td>
-
         <td>$<?= number_format((float)$book['price'], 2) ?></td>
 
         <td>
@@ -84,6 +83,8 @@ include 'includes/nav.inc';
     </tr>
 
 <?php endwhile; ?>
+
+</tbody>
                 </table>
 
             </div>
