@@ -13,8 +13,8 @@ if ($_SERVER['HTTP_HOST'] === 'localhost' || $_SERVER['HTTP_HOST'] === '127.0.0.
 
     // RMIT Jacob 5 database settings
     $db_host = 'talsprddb02.int.its.rmit.edu.au';
-    $db_user = 's3967816';
-    $db_pass = 'wJpg6zeT71WzYO*3rg';
+    $db_user = 'S3967816';
+    $db_pass = 'SDAMSdbpa55%';
     $db_name = 'S3967816_159009';
 }
 
