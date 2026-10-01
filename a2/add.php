@@ -39,7 +39,7 @@
         <div class="container">
 
             <!-- BookVerse Logo -->
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
                 <span class="material-icons">menu_book</span>
                 <span>BookVerse</span>
             </a>
@@ -47,22 +47,22 @@
             <!-- Navigation -->
             <div class="navbar-nav">
 
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="index.php">
                     <span class="material-icons">home</span>
                     <span>Home</span>
                 </a>
 
-                <a class="nav-link" href="books.html">
+                <a class="nav-link" href="books.php">
                     <span class="material-icons">menu_book</span>
                     <span>Browse Books</span>
                 </a>
 
-                <a class="nav-link" href="gallery.html">
+                <a class="nav-link" href="gallery.php">
                     <span class="material-icons">photo_library</span>
                     <span>Gallery</span>
                 </a>
 
-                <a class="nav-link active" href="add.html">
+                <a class="nav-link active" href="add.php">
                     <span class="material-icons">add_circle</span>
                     <span>Add Book</span>
                 </a>
