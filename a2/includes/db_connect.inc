@@ -19,7 +19,13 @@ if ($_SERVER['HTTP_HOST'] === 'localhost' || $_SERVER['HTTP_HOST'] === '127.0.0.
 }
 
 // Connect to MySQL using procedural MySQLi
-$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+$conn = mysqli_connect(
+    $db_host,
+    $db_user,
+    $db_pass,
+    $db_name,
+    3306
+);
 
 // Stop and display an error if the connection fails
 if (!$conn) {
