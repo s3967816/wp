@@ -34,42 +34,15 @@
 
 <body>
 
-   <header>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
+   <?php
+$pageTitle = 'Gallery | BookVerse';
 
-            <a class="navbar-brand" href="index.html">
-                <span class="material-icons">menu_book</span>
-                <span>BookVerse</span>
-            </a>
+require_once 'includes/db_connect.inc';
+include 'includes/header.inc';
+include 'includes/nav.inc';
+?>
 
-            <div class="navbar-nav">
-
-                <a class="nav-link" href="index.html">
-                    <span class="material-icons">home</span>
-                    <span>Home</span>
-                </a>
-
-                <a class="nav-link" href="books.html">
-                    <span class="material-icons">menu_book</span>
-                    <span>Browse Books</span>
-                </a>
-
-                <a class="nav-link active" href="gallery.html">
-                    <span class="material-icons">photo_library</span>
-                    <span>Gallery</span>
-                </a>
-
-                <a class="nav-link" href="add.html">
-                    <span class="material-icons">add_circle</span>
-                    <span>Add Book</span>
-                </a>
-
-            </div>
-
-        </div>
-    </nav>
-</header>
+<main>
 
     <main class="container py-5">
 
