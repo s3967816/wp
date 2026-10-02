@@ -87,6 +87,7 @@ include 'includes/nav.inc';
 
                     <img
     id="modalImage"
+    src="assets/images/covers/1.png"
     alt="Selected book cover"
     class="modal-book-image"
 >
