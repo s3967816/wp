@@ -350,6 +350,7 @@ include 'includes/nav.inc';
                     name="status"
                     required
                 >
+                    <option value="" selected disabled>Select status</option>
                     <option value="Available">Available</option>
                     <option value="Reserved">Reserved</option>
                     <option value="Sold">Sold</option>
