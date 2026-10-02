@@ -57,7 +57,18 @@ include 'includes/nav.inc';
 
                 <table class="table books-table">
 
-                    <tbody>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Year</th>
+            <th>Price</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
 
 <?php while ($book = mysqli_fetch_assoc($booksResult)): ?>
 
