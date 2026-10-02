@@ -43,7 +43,7 @@ if (
 
         const selectedImage = galleryTriggers[currentImageIndex];
 const imagePath = selectedImage.getAttribute("data-image");
-const bookTitle = selectedImage.getAttribute("alt");
+const bookTitle = selectedImage.getAttribute("data-title");
 
 modalImage.src = imagePath;
 modalImage.alt = bookTitle;
