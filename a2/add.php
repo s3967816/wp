@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $bookCondition = trim($_POST['book_condition'] ?? '');
     $price = (float) ($_POST['price'] ?? 0);
     $status = trim($_POST['status'] ?? '');
+    $agree = isset($_POST['agree']);
 
     // Allowed image extensions
     $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
@@ -30,7 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $description === '' ||
         $bookCondition === '' ||
         $price < 0 ||
-        $status === ''
+        $status === '' ||
+        !$agree
     ) {
         $message = 'Please complete all required fields.';
         $messageType = 'danger';
