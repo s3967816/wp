@@ -57,13 +57,12 @@ include 'includes/nav.inc';
 
 
     <!-- Gallery Modal -->
-    <div
-        class="modal fade"
-        id="galleryModal"
-        tabindex="-1"
-        aria-labelledby="galleryModalLabel"
-        aria-hidden="true"
-    >
+    <div class="modal fade"
+     id="galleryModal"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="galleryModalLabel"
+     aria-hidden="true">
 
         <div class="modal-dialog modal-lg modal-dialog-centered">
 
@@ -87,11 +86,10 @@ include 'includes/nav.inc';
                 <div class="modal-body text-center">
 
                     <img
-                        id="modalImage"
-                        src=""
-                        alt="Selected book cover"
-                        class="modal-book-image"
-                    >
+    id="modalImage"
+    alt="Selected book cover"
+    class="modal-book-image"
+>
 
                 </div>
 
