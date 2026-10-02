@@ -27,7 +27,7 @@
                 id="bookverseNavbar"
             >
 
-                <div class="navbar-nav ms-auto">
+                <div class="navbar-nav">
 
                     <a class="nav-link" href="index.php">
                         <span class="material-icons">home</span>
