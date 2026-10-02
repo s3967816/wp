@@ -46,6 +46,7 @@ include 'includes/nav.inc';
                     data-bs-toggle="modal"
                     data-bs-target="#galleryModal"
                     data-image="<?= htmlspecialchars($imagePath) ?>"
+                    data-title="<?= htmlspecialchars($book['title']) ?>"
                 >
 
             </div>
