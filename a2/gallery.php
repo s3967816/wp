@@ -1,217 +1,118 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>BookVerse - Gallery</title>
-
-    <!-- Bootstrap CSS -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Elms+Sans:wght@400;500;600;700&family=Righteous&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- Material Icons -->
-    <link
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet"
-    >
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-
-<body>
-
-   <?php
+<?php
 $pageTitle = 'Gallery | BookVerse';
 
 require_once 'includes/db_connect.inc';
+
+// Get all books that have a cover image
+$sql = "SELECT book_id, title, image_path
+        FROM books
+        WHERE image_path IS NOT NULL
+        AND image_path != ''
+        ORDER BY title";
+
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_execute($stmt);
+$galleryResult = mysqli_stmt_get_result($stmt);
+
 include 'includes/header.inc';
 include 'includes/nav.inc';
 ?>
 
-<main>
+<main class="container py-5">
 
-    <main class="container py-5">
+    <div class="page-heading mb-4">
+        <span class="material-icons">photo_library</span>
+        <h1>Book Gallery</h1>
+    </div>
 
-        <div class="page-heading mb-4">
-            <span class="material-icons">photo_library</span>
-            <h1>Book Gallery</h1>
-        </div>
+    <p class="gallery-intro">
+        Explore our collection of book covers.
+    </p>
 
-        <p class="gallery-intro">
-            Explore our collection of book covers.
-        </p>
+    <section class="gallery-grid">
 
-        <section class="gallery-grid">
+        <?php while ($book = mysqli_fetch_assoc($galleryResult)): ?>
 
-            <div class="gallery-item">
-                <img src="assets/images/covers/1.png"
-                     alt="Book cover 1"
-                     class="gallery-image gallery-trigger"
-                     data-bs-toggle="modal"
-                     data-bs-target="#galleryModal"
-                     data-image="assets/images/covers/1.png">
-            </div>
+            <?php
+            $imagePath = 'assets/images/covers/' . $book['image_path'];
+            ?>
 
             <div class="gallery-item">
-                <img src="assets/images/covers/2.png"
-                     alt="Book cover 2"
-                     class="gallery-image gallery-trigger"
-                     data-bs-toggle="modal"
-                     data-bs-target="#galleryModal"
-                     data-image="assets/images/covers/2.png">
-            </div>
 
-            <div class="gallery-item">
-                <img src="assets/images/covers/3.png"
-                     alt="Book cover 3"
-                     class="gallery-image gallery-trigger"
-                     data-bs-toggle="modal"
-                     data-bs-target="#galleryModal"
-                     data-image="assets/images/covers/3.png">
-            </div>
-
-            <div class="gallery-item">
-                <img src="assets/images/covers/4.png"
-                     alt="Book cover 4"
-                     class="gallery-image gallery-trigger"
-                     data-bs-toggle="modal"
-                     data-bs-target="#galleryModal"
-                     data-image="assets/images/covers/4.png">
-            </div>
-
-            <div class="gallery-item">
-                <img src="assets/images/covers/5.png"
-                     alt="Book cover 5"
-                     class="gallery-image gallery-trigger"
-                     data-bs-toggle="modal"
-                     data-bs-target="#galleryModal"
-                     data-image="assets/images/covers/5.png">
-            </div>
-
-            <div class="gallery-item">
-                <img src="assets/images/covers/6.png"
-                     alt="Book cover 6"
-                     class="gallery-image gallery-trigger"
-                     data-bs-toggle="modal"
-                     data-bs-target="#galleryModal"
-                     data-image="assets/images/covers/6.png">
-            </div>
-
-            <div class="gallery-item">
-                <img src="assets/images/covers/7.png"
-                     alt="Book cover 7"
-                     class="gallery-image gallery-trigger"
-                     data-bs-toggle="modal"
-                     data-bs-target="#galleryModal"
-                     data-image="assets/images/covers/7.png">
-            </div>
-
-            <div class="gallery-item">
-                <img src="assets/images/covers/8.png"
-                     alt="Book cover 8"
-                     class="gallery-image gallery-trigger"
-                     data-bs-toggle="modal"
-                     data-bs-target="#galleryModal"
-                     data-image="assets/images/covers/8.png">
-            </div>
-
-            <div class="gallery-item">
-                <img src="assets/images/covers/9.png"
-                     alt="Book cover 9"
-                     class="gallery-image gallery-trigger"
-                     data-bs-toggle="modal"
-                     data-bs-target="#galleryModal"
-                     data-image="assets/images/covers/9.png">
-            </div>
-
-            <div class="gallery-item">
-                <img src="assets/images/covers/10.png"
-                     alt="Book cover 10"
-                     class="gallery-image gallery-trigger"
-                     data-bs-toggle="modal"
-                     data-bs-target="#galleryModal"
-                     data-image="assets/images/covers/10.png">
-            </div>
-
-            <div class="gallery-item">
-                <img src="assets/images/covers/11.png"
-                     alt="Book cover 11"
+                <img
+                    src="<?= htmlspecialchars($imagePath) ?>"
+                    alt="<?= htmlspecialchars($book['title']) ?>"
                     class="gallery-image gallery-trigger"
-                     data-bs-toggle="modal"
-                     data-bs-target="#galleryModal"
-                     data-image="assets/images/covers/11.png">
+                    data-bs-toggle="modal"
+                    data-bs-target="#galleryModal"
+                    data-image="<?= htmlspecialchars($imagePath) ?>"
+                >
+
             </div>
 
-            <div class="gallery-item">
-                <img src="assets/images/covers/12.png"
-                     alt="Book cover 12"
-                     class="gallery-image gallery-trigger"
-                     data-bs-toggle="modal"
-                     data-bs-target="#galleryModal"
-                     data-image="assets/images/covers/12.png">
-            </div>
+        <?php endwhile; ?>
 
-        </section>
-        
-            <div class="modal fade" id="galleryModal" tabindex="-1"
-     aria-labelledby="galleryModalLabel" aria-hidden="true">
+    </section>
 
-    <div class="modal-dialog modal-lg modal-dialog-centered">
 
-        <div class="modal-content gallery-modal">
+    <!-- Gallery Modal -->
+    <div
+        class="modal fade"
+        id="galleryModal"
+        tabindex="-1"
+        aria-labelledby="galleryModalLabel"
+        aria-hidden="true"
+    >
 
-            <div class="modal-header">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
 
-                <h2 class="modal-title" id="galleryModalLabel">
-                    Book Cover
-                </h2>
+            <div class="modal-content gallery-modal">
 
-                <button type="button"
+                <div class="modal-header">
+
+                    <h2 class="modal-title" id="galleryModalLabel">
+                        Book Cover
+                    </h2>
+
+                    <button
+                        type="button"
                         class="btn-close"
                         data-bs-dismiss="modal"
                         aria-label="Close">
-                </button>
+                    </button>
 
-            </div>
+                </div>
 
-            <div class="modal-body text-center">
+                <div class="modal-body text-center">
 
-                <img id="modalImage"
-                     src=""
-                     alt="Selected book cover"
-                     class="modal-book-image">
+                    <img
+                        id="modalImage"
+                        src=""
+                        alt="Selected book cover"
+                        class="modal-book-image"
+                    >
 
-            </div>
+                </div>
 
-            <div class="modal-footer">
+                <div class="modal-footer">
 
-                <button type="button"
+                    <button
+                        type="button"
                         class="modal-navigation"
                         id="previousImage">
-                    <span class="material-icons">chevron_left</span>
-                    Previous
-                </button>
+                        <span class="material-icons">chevron_left</span>
+                        Previous
+                    </button>
 
-                <button type="button"
+                    <button
+                        type="button"
                         class="modal-navigation next"
                         id="nextImage">
-                    Next
-                    <span class="material-icons">chevron_right</span>
-                </button>
+                        Next
+                        <span class="material-icons">chevron_right</span>
+                    </button>
+
+                </div>
 
             </div>
 
@@ -219,20 +120,6 @@ include 'includes/nav.inc';
 
     </div>
 
-</div>
-    </main>
+</main>
 
-    <footer class="py-4">
-        <div class="container">
-            <p class="mb-0">&copy; 2026 BookVerse</p>
-        </div>
-    </footer>
-
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-    </script>
-
-    <script src="assets/js/scripts.js"></script>
-
-</body>
-</html>
+<?php include 'includes/footer.inc'; ?>
