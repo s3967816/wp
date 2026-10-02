@@ -1,3 +1,4 @@
 .DS_Store
-a2/userimages/*
+a2/assets/images/covers/*
+!a2/assets/images/covers/.gitkeep
 a3/userimages/*
