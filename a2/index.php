@@ -31,7 +31,7 @@ include 'includes/nav.inc';
                          class="d-block w-100"
                          alt="Book cover">
                     <div class="carousel-caption">
-                        <h2>The Midnight Library</h2>
+                        <h1>The Midnight Library</h1>
                     </div>
                 </div>
 
@@ -91,7 +91,7 @@ include 'includes/nav.inc';
         </div>
         </section>
 
-    <!-- Featured Books -->
+
 <!-- Featured Books -->
 <section class="featured-books">
 
