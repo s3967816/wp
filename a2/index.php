@@ -2,6 +2,17 @@
 $pageTitle = 'Home | BookVerse';
 
 require_once 'includes/db_connect.inc';
+
+// Get the 4 latest books added to the database
+$sql = "SELECT book_id, title, author, genre, price, image_path, status
+        FROM books
+        ORDER BY created_at DESC, book_id DESC
+        LIMIT 4";
+
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_execute($stmt);
+$latestBooks = mysqli_stmt_get_result($stmt);
+
 include 'includes/header.inc';
 include 'includes/nav.inc';
 ?>
@@ -81,6 +92,7 @@ include 'includes/nav.inc';
         </section>
 
     <!-- Featured Books -->
+<!-- Featured Books -->
 <section class="featured-books">
 
     <div class="featured-heading">
@@ -90,188 +102,53 @@ include 'includes/nav.inc';
 
     <div class="row g-3">
 
-        <!-- Book 1 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="home-book-card">
+        <?php while ($book = mysqli_fetch_assoc($latestBooks)): ?>
 
-                <img
-                    src="assets/images/covers/1.png"
-                    alt="The Midnight Library"
-                >
+            <?php
+            $statusClass = strtolower($book['status']);
+            $imagePath = 'assets/images/covers/' . $book['image_path'];
+            ?>
 
-                <div class="home-book-info">
-                    <h3>The Midnight Library</h3>
-                    <p>Fiction · Matt Haig</p>
-                    <strong>$24.99</strong>
+            <div class="col-12 col-sm-6 col-lg-3">
 
-                    <span class="home-status available">
-                        Available
-                    </span>
+                <div class="home-book-card">
+
+                    <a href="details.php?id=<?= (int)$book['book_id'] ?>">
+                        <img
+                            src="<?= htmlspecialchars($imagePath) ?>"
+                            alt="<?= htmlspecialchars($book['title']) ?>"
+                        >
+                    </a>
+
+                    <div class="home-book-info">
+
+                        <h3>
+                            <a href="details.php?id=<?= (int)$book['book_id'] ?>">
+                                <?= htmlspecialchars($book['title']) ?>
+                            </a>
+                        </h3>
+
+                        <p>
+                            <?= htmlspecialchars($book['genre']) ?>
+                            ·
+                            <?= htmlspecialchars($book['author']) ?>
+                        </p>
+
+                        <strong>
+                            $<?= number_format((float)$book['price'], 2) ?>
+                        </strong>
+
+                        <span class="home-status <?= htmlspecialchars($statusClass) ?>">
+                            <?= htmlspecialchars($book['status']) ?>
+                        </span>
+
+                    </div>
+
                 </div>
 
             </div>
-        </div>
 
-
-        <!-- Book 2 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="home-book-card">
-
-                <img
-                    src="assets/images/covers/2.png"
-                    alt="Project Hail Mary"
-                >
-
-                <div class="home-book-info">
-                    <h3>Project Hail Mary</h3>
-                    <p>Science Fiction · Andy Weir</p>
-                    <strong>$28.99</strong>
-
-                    <span class="home-status available">
-                        Available
-                    </span>
-                </div>
-
-            </div>
-        </div>
-
-
-        <!-- Book 3 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="home-book-card">
-
-                <img
-                    src="assets/images/covers/3.png"
-                    alt="Dune"
-                >
-
-                <div class="home-book-info">
-                    <h3>Dune</h3>
-                    <p>Science Fiction · Frank Herbert</p>
-                    <strong>$22.99</strong>
-
-                    <span class="home-status available">
-                        Available
-                    </span>
-                </div>
-
-            </div>
-        </div>
-
-
-        <!-- Book 4 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="home-book-card">
-
-                <img
-                    src="assets/images/covers/4.png"
-                    alt="The Hobbit"
-                >
-
-                <div class="home-book-info">
-                    <h3>The Hobbit</h3>
-                    <p>Fantasy · J.R.R. Tolkien</p>
-                    <strong>$18.99</strong>
-
-                    <span class="home-status available">
-                        Available
-                    </span>
-                </div>
-
-            </div>
-        </div>
-
-
-        <!-- Book 5 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="home-book-card">
-
-                <img
-                    src="assets/images/covers/5.png"
-                    alt="1984"
-                >
-
-                <div class="home-book-info">
-                    <h3>1984</h3>
-                    <p>Dystopian · George Orwell</p>
-                    <strong>$16.99</strong>
-
-                    <span class="home-status available">
-                        Available
-                    </span>
-                </div>
-
-            </div>
-        </div>
-
-
-        <!-- Book 6 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="home-book-card">
-
-                <img
-                    src="assets/images/covers/6.png"
-                    alt="Pride and Prejudice"
-                >
-
-                <div class="home-book-info">
-                    <h3>Pride and Prejudice</h3>
-                    <p>Romance · Jane Austen</p>
-                    <strong>$14.99</strong>
-
-                    <span class="home-status reserved">
-                        Reserved
-                    </span>
-                </div>
-
-            </div>
-        </div>
-
-
-        <!-- Book 7 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="home-book-card">
-
-                <img
-                    src="assets/images/covers/7.png"
-                    alt="To Kill a Mockingbird"
-                >
-
-                <div class="home-book-info">
-                    <h3>To Kill a Mockingbird</h3>
-                    <p>Fiction · Harper Lee</p>
-                    <strong>$19.99</strong>
-
-                    <span class="home-status available">
-                        Available
-                    </span>
-                </div>
-
-            </div>
-        </div>
-
-
-        <!-- Book 8 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="home-book-card">
-
-                <img
-                    src="assets/images/covers/8.png"
-                    alt="The Great Gatsby"
-                >
-
-                <div class="home-book-info">
-                    <h3>The Great Gatsby</h3>
-                    <p>Fiction · F. Scott Fitzgerald</p>
-                    <strong>$15.99</strong>
-
-                    <span class="home-status sold">
-                        Sold
-                    </span>
-                </div>
-
-            </div>
-        </div>
+        <?php endwhile; ?>
 
     </div>
 
