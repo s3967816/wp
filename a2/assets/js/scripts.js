@@ -27,20 +27,7 @@ const modalTitle = document.getElementById("galleryModalLabel");
 const previousImage = document.getElementById("previousImage");
 const nextImage = document.getElementById("nextImage");
 
-const galleryBooks = [
-    "The Midnight Library",
-    "Project Hail Mary",
-    "Dune",
-    "The Hobbit",
-    "1984",
-    "Pride and Prejudice",
-    "To Kill a Mockingbird",
-    "The Great Gatsby",
-    "Educated",
-    "The Seven Husbands",
-    "Atomic Habits",
-    "Sapiens"
-];
+
 
 if (
     galleryTriggers.length > 0 &&
@@ -55,12 +42,13 @@ if (
     function updateGalleryModal() {
 
         const selectedImage = galleryTriggers[currentImageIndex];
-        const imagePath = selectedImage.getAttribute("data-image");
+const imagePath = selectedImage.getAttribute("data-image");
+const bookTitle = selectedImage.getAttribute("alt");
 
-        modalImage.src = imagePath;
-        modalImage.alt = galleryBooks[currentImageIndex];
+modalImage.src = imagePath;
+modalImage.alt = bookTitle;
 
-        modalTitle.textContent = galleryBooks[currentImageIndex];
+modalTitle.textContent = bookTitle;
     }
 
     galleryTriggers.forEach(function (image, index) {
