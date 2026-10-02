@@ -31,7 +31,7 @@ include 'includes/nav.inc';
             <h1>All Books</h1>
         </div>
 
-        <section class="filter-section mb-4">
+        <div class="filter-section mb-4">
 
             <label for="statusFilter">Filter by Status:</label>
 
@@ -49,9 +49,9 @@ include 'includes/nav.inc';
 
 </select>
 
-        </section>
+        </div>
 
-        <section class="books-table-container">
+        <div class="books-table-container">
 
             <div class="table-responsive">
 
@@ -100,7 +100,7 @@ include 'includes/nav.inc';
 
             </div>
 
-        </section>
+        </div>
 
     </main>
 
