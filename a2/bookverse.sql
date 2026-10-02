@@ -1,9 +1,9 @@
 -- Create the BookVerse database (only for localdevelopment)
-CREATE DATABASE IF NOT EXISTS bookverse
-DEFAULT CHARACTER SET utf8mb4
-DEFAULT COLLATE utf8mb4_unicode_ci;
+-- CREATE DATABASE IF NOT EXISTS bookverse
+-- DEFAULT CHARACTER SET utf8mb4
+-- DEFAULT COLLATE utf8mb4_unicode_ci;
 
-USE bookverse;
+-- USE bookverse;
 -- Comment out the above lines for deployment (Jacob 5)
 -- Books table
 CREATE TABLE IF NOT EXISTS books
