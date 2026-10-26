@@ -1,3 +1,4 @@
+
 <header>
     <nav class="navbar navbar-expand-lg">
         <div class="container">
@@ -22,10 +23,7 @@
             </button>
 
             <!-- Navigation links -->
-            <div
-                class="collapse navbar-collapse"
-                id="bookverseNavbar"
-            >
+            <div class="collapse navbar-collapse" id="bookverseNavbar">
 
                 <div class="navbar-nav">
 
@@ -44,10 +42,36 @@
                         <span>Gallery</span>
                     </a>
 
-                    <a class="nav-link" href="add.php">
-                        <span class="material-icons">add_circle</span>
-                        <span>Add Book</span>
-                    </a>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+
+                        <a class="nav-link" href="add.php">
+                            <span class="material-icons">add_circle</span>
+                            <span>Add Book</span>
+                        </a>
+
+                        <a class="nav-link" href="seller.php">
+                            <span class="material-icons">person</span>
+                            <span>My Books</span>
+                        </a>
+
+                        <a class="nav-link" href="logout.php">
+                            <span class="material-icons">logout</span>
+                            <span>Logout</span>
+                        </a>
+
+                    <?php else: ?>
+
+                        <a class="nav-link" href="login.php">
+                            <span class="material-icons">login</span>
+                            <span>Login</span>
+                        </a>
+
+                        <a class="nav-link" href="register.php">
+                            <span class="material-icons">person_add</span>
+                            <span>Register</span>
+                        </a>
+
+                    <?php endif; ?>
 
                 </div>
 
