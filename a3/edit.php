@@ -182,3 +182,123 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 ?>
+
+<?php
+include 'includes/header.inc';
+include 'includes/nav.inc';
+?>
+
+<main class="container py-5">
+
+    <div class="page-heading mb-4">
+        <span class="material-icons">edit</span>
+        <h1>Edit Book</h1>
+    </div>
+
+    <section class="add-book-container">
+
+        <?php if ($message !== ''): ?>
+            <div class="alert alert-<?= htmlspecialchars($messageType) ?>">
+                <?= htmlspecialchars($message) ?>
+            </div>
+        <?php endif; ?>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            <div class="mb-3">
+                <label for="title" class="form-label">Book Title</label>
+                <input type="text" class="form-control" id="title"
+                       name="title" value="<?= htmlspecialchars($book['title']) ?>" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="author" class="form-label">Author</label>
+                <input type="text" class="form-control" id="author"
+                       name="author" value="<?= htmlspecialchars($book['author']) ?>" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="genre" class="form-label">Genre</label>
+                <input type="text" class="form-control" id="genre"
+                       name="genre" value="<?= htmlspecialchars($book['genre']) ?>" required>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="publication_year" class="form-label">Publication Year</label>
+                    <input type="number" class="form-control" id="publication_year"
+                           name="publication_year"
+                           value="<?= htmlspecialchars($book['publication_year']) ?>" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="price" class="form-label">Price ($)</label>
+                    <input type="number" class="form-control" id="price"
+                           name="price" step="0.01" min="0"
+                           value="<?= htmlspecialchars($book['price']) ?>" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="isbn" class="form-label">ISBN</label>
+                    <input type="text" class="form-control" id="isbn"
+                           name="isbn" value="<?= htmlspecialchars($book['isbn']) ?>" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="book_condition" class="form-label">Book Condition</label>
+                    <select class="form-select" id="book_condition"
+                            name="book_condition" required>
+                        <option value="New" <?= $book['book_condition'] === 'New' ? 'selected' : '' ?>>New</option>
+                        <option value="Gently Used" <?= $book['book_condition'] === 'Gently Used' ? 'selected' : '' ?>>Gently Used</option>
+                        <option value="Fair" <?= $book['book_condition'] === 'Fair' ? 'selected' : '' ?>>Fair</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description"
+                          name="description" rows="4" required><?= htmlspecialchars($book['description']) ?></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Current Cover Image</label>
+                <div>
+                    <?php if (!empty($book['image_path'])): ?>
+                        <img src="assets/images/covers/<?= htmlspecialchars($book['image_path']) ?>"
+                             alt="Current book cover" style="max-width: 150px;">
+                    <?php endif; ?>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="image_path" class="form-label">Replace Cover Image (optional)</label>
+                <input type="file" class="form-control" id="image_path"
+                       name="image_path" accept=".jpg,.jpeg,.png,.gif,.webp">
+            </div>
+
+            <div class="mb-3">
+                <label for="status" class="form-label">Availability Status</label>
+                <select class="form-select" id="status" name="status" required>
+                    <option value="Available" <?= $book['status'] === 'Available' ? 'selected' : '' ?>>Available</option>
+                    <option value="Reserved" <?= $book['status'] === 'Reserved' ? 'selected' : '' ?>>Reserved</option>
+                    <option value="Sold" <?= $book['status'] === 'Sold' ? 'selected' : '' ?>>Sold</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary add-book-button">
+                Save Changes
+            </button>
+
+            <a href="details.php?id=<?= (int)$book['book_id'] ?>"
+               class="btn btn-secondary">
+                Cancel
+            </a>
+
+        </form>
+    </section>
+</main>
+
+<?php include 'includes/footer.inc'; ?>
