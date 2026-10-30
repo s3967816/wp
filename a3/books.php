@@ -4,9 +4,12 @@ $pageTitle = 'Browse Books | BookVerse';
 require_once 'includes/db_connect.inc';
 
 // Get all books
-$sql = "SELECT book_id, title, author, genre, publication_year, price, status
+$sql = "SELECT books.book_id, books.title, books.author, books.genre,
+               books.publication_year, books.price, books.status,
+               books.user_id, users.username
         FROM books
-        ORDER BY title";
+        LEFT JOIN users ON books.user_id = users.user_id
+        ORDER BY books.title";
 
 $stmt = mysqli_prepare($conn, $sql);
 mysqli_stmt_execute($stmt);
@@ -65,6 +68,7 @@ include 'includes/nav.inc';
             <th>Year</th>
             <th>Price</th>
             <th>Status</th>
+            <th>Seller</th>
         </tr>
     </thead>
 
@@ -90,6 +94,16 @@ include 'includes/nav.inc';
                 <?= htmlspecialchars($book['status']) ?>
             </span>
         </td>
+
+        <td>
+            <?php if ($book['user_id'] !== null): ?>
+                <a href="seller.php?id=<?= (int)$book['user_id'] ?>">
+            <?= htmlspecialchars($book['username']) ?>
+                </a>
+    <?php else: ?>
+        —
+    <?php endif; ?>
+    </td>
 
     </tr>
 

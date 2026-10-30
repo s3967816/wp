@@ -49,10 +49,10 @@
                             <span>Add Book</span>
                         </a>
 
-                        <a class="nav-link" href="seller.php">
+                        <a class="nav-link" href="seller.php?id=<?= (int)$_SESSION['user_id'] ?>">
                             <span class="material-icons">person</span>
                             <span>My Books</span>
-                        </a>
+                            </a>
 
                         <a class="nav-link" href="logout.php">
                             <span class="material-icons">logout</span>

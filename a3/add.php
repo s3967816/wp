@@ -1,4 +1,13 @@
 <?php
+require_once 'includes/session.inc';
+
+if (!isset($_SESSION['user_id'])) {
+    $_SESSION['flash_message'] = 'Please log in to add a book.';
+    $_SESSION['flash_type'] = 'warning';
+    header('Location: login.php');
+    exit;
+}
+
 $pageTitle = 'Add Book | BookVerse';
 
 require_once 'includes/db_connect.inc';
@@ -65,15 +74,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (move_uploaded_file($_FILES['image_path']['tmp_name'], $uploadPath)) {
 
                 $sql = "INSERT INTO books
-                        (title, author, genre, publication_year, isbn,
-                         description, book_condition, price, image_path, status)
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    (title, author, genre, publication_year, isbn,
+                    description, book_condition, price, image_path, status, user_id)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
                 $stmt = mysqli_prepare($conn, $sql);
 
                 mysqli_stmt_bind_param(
                     $stmt,
-                    "sssisssdss",
+                    "sssisssdssi",
                     $title,
                     $author,
                     $genre,
@@ -84,6 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $price,
                     $uniqueFilename,
                     $status
+                    $_SESSION['user_id']
                 );
 
                 if (mysqli_stmt_execute($stmt)) {

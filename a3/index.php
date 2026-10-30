@@ -4,9 +4,12 @@ $pageTitle = 'Home | BookVerse';
 require_once 'includes/db_connect.inc';
 
 // Get the 4 latest books added to the database
-$sql = "SELECT book_id, title, author, genre, price, image_path, status
+$sql = "SELECT books.book_id, books.title, books.author, books.genre,
+               books.price, books.image_path, books.status,
+               books.user_id, users.username
         FROM books
-        ORDER BY created_at DESC, book_id DESC
+        LEFT JOIN users ON books.user_id = users.user_id
+        ORDER BY books.created_at DESC, books.book_id DESC
         LIMIT 4";
 
 $stmt = mysqli_prepare($conn, $sql);
@@ -141,6 +144,15 @@ include 'includes/nav.inc';
                         <span class="home-status <?= htmlspecialchars($statusClass) ?>">
                             <?= htmlspecialchars($book['status']) ?>
                         </span>
+
+                        <?php if ($book['user_id'] !== null): ?>
+                            <p class="home-seller">
+                            Seller:
+                            <a href="seller.php?id=<?= (int)$book['user_id'] ?>">
+                            <?= htmlspecialchars($book['username']) ?>
+                            </a>
+                            </p>
+                        <?php endif; ?>
 
                     </div>
 
