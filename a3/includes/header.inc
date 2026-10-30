@@ -1,3 +1,7 @@
+<?php
+    require_once __DIR__ . '/session.inc';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,3 +25,4 @@
 </head>
 
 <body>
+<?php displayFlashMessage(); ?>

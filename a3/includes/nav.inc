@@ -42,6 +42,11 @@
                         <span>Gallery</span>
                     </a>
 
+                    <a class="nav-link" href="search.php">
+                        <span class="material-icons">search</span>
+                        <span>Search</span>
+                    </a>
+
                     <?php if (isset($_SESSION['user_id'])): ?>
 
                         <a class="nav-link" href="add.php">

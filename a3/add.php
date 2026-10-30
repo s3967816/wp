@@ -92,24 +92,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $bookCondition,
                     $price,
                     $uniqueFilename,
-                    $status
+                    $status,
                     $_SESSION['user_id']
                 );
 
                 if (mysqli_stmt_execute($stmt)) {
 
-                    $message = 'Book added successfully.';
-                    $messageType = 'success';
+                    $newBookId = mysqli_insert_id($conn);
+
+                    $_SESSION['flash_message'] = 'Book added successfully.';
+                    $_SESSION['flash_type'] = 'success';
+
+                    mysqli_stmt_close($stmt);
+
+                    header('Location: details.php?id=' . $newBookId);
+                    exit;
 
                 } else {
 
-                    // Remove uploaded image if database insert fails
                     if (file_exists($uploadPath)) {
                         unlink($uploadPath);
                     }
 
                     $message = 'The book could not be added to the database.';
                     $messageType = 'danger';
+
+                    mysqli_stmt_close($stmt);
                 }
 
             } else {

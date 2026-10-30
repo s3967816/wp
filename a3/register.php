@@ -79,15 +79,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $hashedPassword
             );
 
-            if (mysqli_stmt_execute($insertStmt)) {
+        if (mysqli_stmt_execute($insertStmt)) {
 
-                $_SESSION['flash_message'] = 'Registration successful. You can now log in.';
-                $_SESSION['flash_type'] = 'success';
+            // Automatically log in the newly registered user
+            $_SESSION['user_id'] = mysqli_insert_id($conn);
+            $_SESSION['username'] = $username;
 
-                header('Location: login.php');
-                exit;
+            session_regenerate_id(true);
 
-            } else {
+            $_SESSION['flash_message'] = 'Registration successful. Welcome to BookVerse!';
+            $_SESSION['flash_type'] = 'success';
+
+            header('Location: index.php');
+            exit;
+
+        } else {
 
                 $message = 'Registration failed. Please try again.';
                 $messageType = 'danger';
