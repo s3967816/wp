@@ -4,7 +4,7 @@ DEFAULT CHARACTER SET utf8mb4
 DEFAULT COLLATE utf8mb4_unicode_ci;
 
 USE bookverse;
--- Comment out the above lines for deployment (Jacob 5)
+
 -- Comment out the above lines for deployment (Jacob 5)
 
 DROP TABLE IF EXISTS books;
