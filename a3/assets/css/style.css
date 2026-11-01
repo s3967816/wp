@@ -846,15 +846,25 @@ main h1 {
 }
 
 .featured-heading .material-icons {
-    color: #14b8a6;
+    color: var(--primary);
     font-size: 18px;
 }
 
 .featured-heading h2 {
     margin: 0;
-    color: #f1f5f9;
+    color: var(--text-dark);
     font-size: 1rem;
     font-weight: 700;
+}
+
+@media (prefers-color-scheme: dark) {
+    .featured-heading .material-icons {
+        color: #38bdf8;
+    }
+
+    .featured-heading h2 {
+        color: #f1f5f9;
+    }
 }
 
 
@@ -909,6 +919,21 @@ main h1 {
     color: #1f2937;
     font-size: 0.65rem;
     font-weight: 700;
+}
+
+@media (prefers-color-scheme: dark) {
+    .home-book-info {
+        background-color: #1e293b;
+    }
+
+    .home-book-info h3,
+    .home-book-info strong {
+        color: #f1f5f9;
+    }
+
+    .home-book-info p {
+        color: #cbd5e1;
+    }
 }
 
 
