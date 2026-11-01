@@ -64,6 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $title === '' ||
         $author === '' ||
         $genre === '' ||
+        $isbn === '' ||
         $publicationYear <= 0 ||
         $description === '' ||
         $bookCondition === '' ||
