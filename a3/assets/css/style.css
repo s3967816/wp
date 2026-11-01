@@ -484,6 +484,11 @@ main h1 {
     border-color: #cbd5e1;
 }
 
+.add-book-container .form-check-input:checked {
+    background-color: #14b8a6;
+    border-color: #14b8a6;
+}
+
 .add-book-container .form-check-label {
     color: #f1f5f9;
     font-size: 0.68rem;
