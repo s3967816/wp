@@ -244,10 +244,184 @@ Testing/verification: I committed the SQL changes, pulled them onto Titan and us
 
 
 
+# Assignment 3 Debugging Records
 
+## Debugging Record 1 — Add Book Parameter Binding
+
+Date identified and fixed: 30 October 2026
+
+File affected: `add.php`
+
+Issue: The Add Book database insertion had an issue with the parameters supplied to the prepared statement.
+
+Root cause: The `mysqli_stmt_bind_param()` type string and arguments needed to match the fields in the SQL INSERT statement. An incorrect binding could prevent the book information from being inserted correctly.
+
+Fix applied:Corrected the parameter binding type string and arguments to match the INSERT query, including the title, author, genre, publication year, ISBN, description, condition, price, image filename, status and logged-in user's ID.
+
+Verification/testing: Reviewed the corrected parameter binding against the SQL INSERT statement and checked that the number, order and types of the parameters matched.
+
+GitHub commit: https://github.com/s3967816/wp/commit/a0144df852996f15ec66fd17caee9f7d55fec4e8
 
 ---
 
-# Assignment 3 Debugging Records
+## Debugging Record 2 — Login Redirect
+
+Date identified and fixed: 26 October 2026
+
+File affected: `login.php`
+
+Issue: After a successful login, the user was redirected to the seller page without a seller ID. This meant the destination page did not receive the information it required.
+
+Root cause:The login redirect pointed to `seller.php` without including the logged-in user's ID in the query string.
+
+Fix applied: Changed the successful login redirect to `index.php`. This allows the user to return to the home page after logging in without requiring a seller ID in the URL.
+
+Verification/testing: Reviewed the updated redirect and confirmed that it no longer directs users to the seller page without an ID.
+
+GitHub commit: https://github.com/s3967816/wp/commit/f878ba490c511f259c14a3111857aa4fcf217658
+
+---
+
+## Debugging Record 3 — Seller Link HTML Markup
+
+Date identified and fixed: 30 October 2026
+
+File affected: `books.php`
+
+Issue: The seller link in the books table contained malformed HTML markup, which affected the structure of the table.
+
+Root cause: The closing table-cell markup around the seller link was incorrect.
+
+Fix applied: Corrected the malformed HTML so the seller link was properly contained within its table cell.
+
+Verification/testing: Reviewed the corrected table markup and checked that the seller link and surrounding table-cell elements were properly opened and closed.
+
+GitHub commit: https://github.com/s3967816/wp/commit/58f9ead4f8dd978bad1c8636cfe71d858058fa4b
+
+---
+
+## Debugging Record 4 — Unwanted Characters on the Details Page
+
+Date identified and fixed: 30 October 2026
+
+File affected: `details.php`
+
+Issue: Unwanted `0` characters appeared in the page output.
+
+Root cause: Accidental characters had been left in the PHP and HTML markup around the conditional output and footer include.
+
+Fix applied: Removed the unwanted characters so the page output contained only the intended HTML and PHP-generated content.
+
+Verification/testing: Reviewed the corrected PHP and HTML structure and checked that the accidental characters had been removed.
+
+GitHub commit: https://github.com/s3967816/wp/commit/58f9ead4f8dd978bad1c8636cfe71d858058fa4b
+
+---
+
+## Debugging Record 5 — Edit Book ISBN Validation
+
+Date identified and fixed: 1 November 2026
+
+File affected: `edit.php`
+
+Issue: The Edit Book form did not have server-side validation to ensure that the ISBN field was completed.
+
+Root cause: The ISBN field was missing from the server-side required-field validation condition, meaning an empty ISBN could pass that particular validation check.
+
+Fix applied: Added the ISBN field to the required-field validation condition so the form checks that an ISBN has been provided before updating the book.
+
+Verification/testing: Reviewed the updated validation condition and confirmed that the ISBN field was included alongside the other required fields.
+
+GitHub commit: https://github.com/s3967816/wp/commit/8a79deeda13f411374566f86980f06c616bec515
 
 
+
+**# Assignment 3 AI Use Records**
+
+**## AI Use Record 1 — Database Configuration**
+
+Date: 25 October 2026
+
+Tool used: ChatGPT
+
+Task description: Configure the database connection for the Assignment 3 BookVerse website so it could work locally and on the RMIT hosting environment.
+
+Prompt/input used: I provided my database connection code and explained that the website needed to connect to the local BookVerse database during development and the RMIT database when deployed.
+
+Summary of AI output: ChatGPT reviewed the database connection settings and suggested detecting whether the website was running locally or on the RMIT server, then selecting the appropriate database host, username and database name.
+
+Accepted/rejected/modified: I accepted the suggested environment detection approach and kept my actual database credentials in my configuration.
+
+Testing/verification: Reviewed the connection configuration and checked that the local and RMIT database settings were assigned to the correct environments.
+
+---
+
+**## AI Use Record 2 — Registration and Login Functionality**
+
+Date: 26 October 2026
+
+Tool used: ChatGPT
+
+Task description: Develop the registration and login functionality using PHP sessions and secure password handling.
+
+Prompt/input used: I provided my registration and login code and asked for help checking the database queries, password handling, session setup and redirects.
+
+Summary of AI output: ChatGPT helped review the registration process, password hashing, password verification, prepared statements and session handling. It also identified that the successful login redirect was pointing to the seller page without an ID.
+
+Accepted/rejected/modified: I accepted the security and validation recommendations and changed the successful login redirect to the home page.
+
+Testing/verification: Reviewed the registration and login code, including the prepared statements, password handling and redirect behaviour.
+
+---
+
+**## AI Use Record 3 — Secure Book Editing and Ownership Checks**
+
+Date: 30 October 2026
+
+Tool used: ChatGPT
+
+Task description: Implement book editing functionality while ensuring users could only edit their own books.
+
+Prompt/input used: I explained that the Edit Book page needed to retrieve an existing book, check its ownership and allow the owner to update its information and cover image.
+
+Summary of AI output: ChatGPT suggested using prepared statements to retrieve and update books, checking the logged-in user's ID against the book's user ID, and handling optional image replacement.
+
+Accepted/rejected/modified: I used the suggested ownership-checking approach and adapted the code to match my existing BookVerse database fields and page structure.
+
+Testing/verification: Reviewed the ownership checks, prepared statements and update logic to confirm that the queries included both the book ID and the logged-in user's ID.
+
+---
+
+**## AI Use Record 4 — Book Search Functionality**
+
+Date: 30 October 2026
+
+Tool used: ChatGPT
+
+Task description: Implement database-driven book searching.
+
+Prompt/input used: I asked for help creating a search page that allowed visitors to search for books using their title, author or description.
+
+Summary of AI output: ChatGPT suggested using a prepared SQL statement with `LIKE` conditions for the title, author and description fields, along with wildcard characters to find partial matches.
+
+Accepted/rejected/modified: I accepted the prepared statement approach and incorporated it into my existing PHP page structure.
+
+Testing/verification: Reviewed the SQL query and parameter binding to confirm that all three search fields were included and user input was passed through prepared statement parameters.
+
+---
+
+**## AI Use Record 5 — Edit Book Form Validation**
+
+Date: 1 November 2026
+
+Tool used: ChatGPT
+
+Task description: Review and improve the server-side validation on the Edit Book form.
+
+Prompt/input used: I provided my Edit Book PHP code and asked ChatGPT to check whether the form validation covered the required fields.
+
+Summary of AI output: ChatGPT identified that the ISBN field was missing from the server-side required-field validation condition.
+
+Accepted/rejected/modified: I accepted the recommendation and added the ISBN field to the required-field validation.
+
+Testing/verification: Reviewed the updated validation condition and confirmed that the ISBN field was included in the required-field checks.
