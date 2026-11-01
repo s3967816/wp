@@ -1,54 +1,73 @@
 # BookVerse
 
-BookVerse is a responsive PHP and MySQL book collection website created for COSC2446 Web Programming Assessment 2.
+BookVerse is a responsive PHP and MySQL book collection website developed for COSC2446 Web Programming Assessment 3.
 
-The website allows users to browse books stored in a database, filter books by availability, view individual book details, browse book covers in an interactive gallery, and add new books with cover image uploads.
+The website allows visitors to browse, search and view books stored in a database. Registered users can log in, add books, manage their own listings and view books belonging to individual sellers.
 
 ## Live Website
 
-https://titan.csit.rmit.edu.au/~s3967816/wp/a2/
+A3 deployment: To be added after deployment to the RMIT hosting environment.
 
 ## Features
 
 - Database-driven book collection using MySQL
-- PHP server-side processing
 - Responsive Bootstrap 5 navigation and layouts
 - Shared PHP header, navigation and footer includes
-- Home page carousel with four static images
-- Four latest database books displayed on the Home page
-- Browse Books table populated from the database
-- Client-side filtering by book status
-- Individual database-driven book details page
-- Database-driven book cover gallery
-- Bootstrap gallery modal with Previous and Next navigation
-- Add Book form with server-side validation
+- Home page carousel and four latest database books
+- Browse Books table with client-side status filtering
+- Individual book details pages
+- Database-driven book cover gallery with Bootstrap modal
+- Search books by title, author and description
+- User registration with password hashing
+- User login using password verification and PHP sessions
+- Automatic login after successful registration
+- User logout
+- Add Book form with server-side validation and image uploads
+- Edit and delete functionality restricted to the book's owner
+- Seller pages displaying books belonging to a selected user
 - Prepared SQL statements using procedural MySQLi
-- Book cover upload with unique server-generated filenames
-- Client-side image extension validation
-- Live book cover preview using FileReader
-- Automatic light and dark mode using `prefers-color-scheme`
-- Responsive layouts for desktop, tablet and mobile
+- Escaped database output using `htmlspecialchars()`
+- Session-based flash messages
+- Unique server-generated filenames for uploaded cover images
+- JavaScript image validation and live image preview
+- Responsive desktop, tablet and mobile layouts
 
 ## Pages
 
-- `index.php` — Home page with carousel and the four latest books
-- `books.php` — Database-driven book collection and status filtering
-- `details.php` — Displays the full details of a selected book
-- `gallery.php` — Database-driven book cover gallery and modal
-- `add.php` — Adds a new book and cover image to the collection
+- `index.php` — Home page with carousel and latest books
+- `books.php` — Book collection and status filtering
+- `details.php` — Full details of an individual book
+- `gallery.php` — Book cover gallery and image modal
+- `search.php` — Search books by title, author or description
+- `seller.php` — Displays books belonging to a seller
+- `add.php` — Adds a new book for the logged-in user
+- `edit.php` — Allows a book's owner to edit their listing
+- `delete.php` — Processes owner-authorised book deletion
+- `register.php` — Creates a new user account
+- `login.php` — Authenticates users
+- `logout.php` — Ends the current user session
 
 ## Project Structure
 
-```text
-a2/
+\`\`\`text
+a3/
 ├── index.php
 ├── books.php
 ├── details.php
 ├── gallery.php
+├── search.php
+├── seller.php
 ├── add.php
+├── edit.php
+├── delete.php
+├── register.php
+├── login.php
+├── logout.php
 ├── bookverse.sql
 ├── README.md
 ├── process-evidence.md
+├── .gitignore
+├── favicon.svg
 │
 ├── includes/
 │   ├── db_connect.inc
@@ -63,7 +82,7 @@ a2/
     │   └── scripts.js
     └── images/
         └── covers/
-```
+\`\`\`
 
 ## Technologies Used
 
@@ -78,90 +97,61 @@ a2/
 - Google Material Icons
 - Git and GitHub
 
-## Database and Coding Choices
+## Database and Security
 
-Book data is stored in the MySQL `books` table. PHP retrieves the records and dynamically generates the Home, Browse Books, Details and Gallery content.
+Book and user information is stored in the MySQL database using the supplied BookVerse database schema.
 
 Database operations use procedural MySQLi and prepared statements. User-controlled output is escaped using `htmlspecialchars()` before being displayed.
 
-The Add Book page performs server-side validation before inserting a record. Uploaded cover images are checked for an allowed file extension and stored using a unique filename generated with `uniqid()`.
+Passwords are stored using PHP's `password_hash()` function and checked using `password_verify()`.
 
-Shared page elements are stored in the `includes` directory to avoid duplicating the header, navigation and footer across each page.
+PHP sessions are used to maintain login status. Access to adding, editing and deleting books is restricted to authenticated users, with editing and deletion limited to the owner of each book.
+
+Uploaded cover images are checked on the server and stored using unique server-generated filenames.
 
 ## JavaScript Functionality
 
-A single JavaScript file is used for client-side functionality.
+Client-side functionality is maintained in `assets/js/scripts.js`.
 
 JavaScript provides:
 
 - Book status filtering without reloading the page
-- Gallery modal image and title updates
+- Gallery image and title updates
 - Previous and Next gallery navigation
 - Book cover extension validation
 - Live book cover preview using FileReader
 
-Gallery titles are obtained from database-generated HTML data rather than a hard-coded JavaScript book list.
-
 ## Responsive Design
 
-Bootstrap's responsive grid system is used together with custom CSS.
+Bootstrap 5 and custom CSS are used to provide responsive layouts for desktop, tablet and mobile screens.
 
-The navigation collapses on smaller screens, the Featured Books section changes column layout according to screen width, and the Gallery adjusts its grid for desktop, tablet and mobile displays.
+The navigation adapts to smaller screens, and the book collection and gallery layouts adjust to different screen sizes.
 
-Dark mode is automatically applied using `prefers-color-scheme`.
+The website also includes light and dark colour schemes.
 
 ## Testing
 
-The website was manually tested on the RMIT Titan hosting environment.
+Testing will be documented as A3 functionality is verified.
 
-Testing included:
-
-- Navigation between all pages
-- Responsive navigation menu
-- Home page carousel
-- Four latest database records on the Home page
-- Browse Books database output
-- Status filtering
-- Book Details links and database output
-- Gallery modal opening
-- Gallery Previous and Next controls
-- Dynamic gallery titles
-- Add Book required-field validation
-- Server-side validation
-- Valid and invalid image extensions
-- Cover image preview
-- Book insertion into the Jacob 5 database
-- Unique uploaded cover filenames
-- Responsive layouts
-- Light and dark colour schemes
+Testing includes database operations, user registration and login, ownership restrictions, book creation and editing, deletion, searching, gallery functionality and responsive layouts.
 
 ## Deployment
 
-The website is deployed on the RMIT Titan web server and uses the RMIT Jacob 5 MySQL database.
+The application is designed to use a local MySQL database during development and the RMIT Jacob 5 MySQL database when deployed.
 
-The `a2` directory uses the required web permissions and the cover upload directory is writable by the web server.
-
-Uploaded book cover files are excluded from Git using `.gitignore`.
+Deployment details and configuration will be updated after the A3 application has been deployed and tested.
 
 ## Git and GitHub
 
-Development was managed using Git and GitHub with progressive commits made throughout the project.
-
-The repository contains the website source code, database setup script, documentation and process evidence.
+Development is managed using Git and GitHub with progressive commits throughout the project.
 
 GitHub Repository: https://github.com/s3967816/wp
 
 ## AI Use
 
-ChatGPT was used as a development support tool for debugging, PHP/MySQL troubleshooting, JavaScript improvements, deployment troubleshooting and checking implementation requirements.
+ChatGPT was used as a development support tool for debugging, PHP and MySQL troubleshooting, reviewing implementation requirements and improving code.
 
-Meaningful AI interactions and the resulting changes and verification are documented in `process-evidence.md`.
-
-## Known Limitations
-
-Uploaded book covers are stored on the server filesystem while their filenames are stored in the database.
-
-The application is designed for the RMIT course hosting environment and does not include user accounts or authentication.
+Relevant AI interactions, accepted changes and verification are documented in `process-evidence.md`.
 
 ## Author
 

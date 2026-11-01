@@ -1,0 +1,10 @@
+# Uploaded book cover images
+assets/images/covers/
+
+# Local configuration and secrets
+config.local.php
+
+# Temporary files
+*.log
+.DS_Store
+Thumbs.db

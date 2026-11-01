@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['flash_message'] = 'Welcome back, ' . $user['username'] . '!';
                 $_SESSION['flash_type'] = 'success';
 
-                header('Location: seller.php');
+                header('Location: index.php');
                 exit;
 
             } else {

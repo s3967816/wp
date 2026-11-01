@@ -117,7 +117,7 @@ include 'includes/nav.inc';
             Delete Book
             </button>
 
-        <?php endif; ?>0
+        <?php endif; ?>
 
 <a href="books.php" class="btn btn-secondary mt-3">
     Back to Books
@@ -160,4 +160,4 @@ include 'includes/nav.inc';
 
 </main>
 
-<?php include 'includes/footer.inc'; ?>0
+<?php include 'includes/footer.inc'; ?>

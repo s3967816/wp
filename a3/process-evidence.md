@@ -241,3 +241,13 @@ Summary of AI output: ChatGPT found that some SQL comments were formatted incorr
 Accepted/rejected/modified: I corrected the comments and left the rest of my table and sample data unchanged.
 
 Testing/verification: I committed the SQL changes, pulled them onto Titan and used git status to confirm everything was clean.
+
+
+
+
+
+---
+
+# Assignment 3 Debugging Records
+
+
