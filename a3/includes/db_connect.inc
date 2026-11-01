@@ -20,7 +20,7 @@ if ($is_local) {
     $db_host = 'talsprddb02.int.its.rmit.edu.au';
     $db_user = 'S3967816';
     $db_pass = 'SDAMSdbpa55%';
-    $db_name = 's3967816';
+    $db_name = 'S3967816_159009';
 }
 
 // Connect using procedural MySQLi
